@@ -39,6 +39,11 @@
             margin-right: 10px;
         }
         
+        .logo h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
         .today-container {
             background-color: white;
             border-radius: 8px;
@@ -145,6 +150,7 @@
         .plastica { background-color: #FFD700; color: #333; }
         .carta-cartone { background-color: #4169E1; }
         .vetro-lattine { background-color: #2E8B57; }
+        .nessuna-raccolta { background-color: #FF0000; }
         
         .legend {
             background-color: white;
@@ -307,6 +313,49 @@
                 padding: 6px;
                 font-size: 0.9rem;
             }
+            
+            header {
+                flex-direction: column;
+                padding: 10px;
+                gap: 10px;
+                margin-bottom: 20px;
+            }
+            
+            .logo {
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+            }
+            
+            .logo h1 {
+                font-size: 1.4rem;
+                text-align: center;
+            }
+            
+            .waste-type {
+                font-size: 2rem;
+                width: 100%;
+                padding: 10px 15px;
+            }
+            
+            .waste-info {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .today-header {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -338,7 +387,7 @@
         <div class="next-days">
             <div class="day-card">
                 <div class="day-header">
-                    DOMANI - <span id="tomorrow-date"></span>
+                    SUCCESSIVO - <span id="tomorrow-date"></span>
                 </div>
                 <div class="day-content">
                     <div id="tomorrow-waste-type" class="small-waste-type">Caricamento...</div>
@@ -347,7 +396,7 @@
             
             <div class="day-card">
                 <div class="day-header">
-                    DOPODOMANI - <span id="day-after-date"></span>
+                    2 GIORNI DOPO - <span id="day-after-date"></span>
                 </div>
                 <div class="day-content">
                     <div id="day-after-waste-type" class="small-waste-type">Caricamento...</div>
@@ -377,6 +426,10 @@
                 <div class="legend-item">
                     <div class="legend-color vetro-lattine"></div>
                     <span>Vetro e Lattine</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color nessuna-raccolta"></div>
+                    <span>Nessuna Raccolta</span>
                 </div>
             </div>
         </div>
@@ -421,104 +474,187 @@
         const wasteSchedule = {
             // Month indexes are 0-based (0 = January, 11 = December)
             0: { // January
-                1: "SECCO RESIDUALE", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA", 5: "ORGANICO", 
+                1: "SECCO RESIDUALE", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA", 
+                5: "Nessuna Raccolta", // Sunday
                 6: "ORGANICO", 7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "CARTA E CARTONE", 10: "ORGANICO", 
-                11: "PLASTICA", 12: "ORGANICO", 13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "VETRO E LATTINE", 
-                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA", 19: "ORGANICO", 20: "ORGANICO", 
+                11: "PLASTICA", 
+                12: "Nessuna Raccolta", // Sunday
+                13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "VETRO E LATTINE", 
+                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA", 
+                19: "Nessuna Raccolta", // Sunday
+                20: "ORGANICO", 
                 21: "SECCO RESIDUALE", 22: "CARTA E CARTONE", 23: "ORGANICO", 24: "ORGANICO", 25: "PLASTICA", 
-                26: "ORGANICO", 27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "VETRO E LATTINE", 30: "CARTA E CARTONE", 31: "ORGANICO"
+                26: "Nessuna Raccolta", // Sunday
+                27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "VETRO E LATTINE", 30: "CARTA E CARTONE", 31: "ORGANICO"
             },
             1: { // February
-                1: "PLASTICA", 2: "ORGANICO", 3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE", 
-                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA", 9: "ORGANICO", 10: "ORGANICO", 
+                1: "PLASTICA", 
+                2: "Nessuna Raccolta", // Sunday
+                3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE", 
+                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA", 
+                9: "Nessuna Raccolta", // Sunday
+                10: "ORGANICO", 
                 11: "SECCO RESIDUALE", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 15: "PLASTICA", 
-                16: "ORGANICO", 17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE", 
-                21: "ORGANICO", 22: "PLASTICA", 23: "ORGANICO", 24: "ORGANICO", 25: "SECCO RESIDUALE", 
+                16: "Nessuna Raccolta", // Sunday
+                17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE", 
+                21: "ORGANICO", 22: "PLASTICA", 
+                23: "Nessuna Raccolta", // Sunday
+                24: "ORGANICO", 25: "SECCO RESIDUALE", 
                 26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO"
             },
-            // Continue with other months...
             2: { // March
-                1: "PLASTICA", 2: "ORGANICO", 3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE", 
-                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA", 9: "ORGANICO", 10: "ORGANICO", 
+                1: "PLASTICA", 
+                2: "Nessuna Raccolta", // Sunday
+                3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE", 
+                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA", 
+                9: "Nessuna Raccolta", // Sunday
+                10: "ORGANICO", 
                 11: "SECCO RESIDUO", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 15: "PLASTICA", 
-                16: "ORGANICO", 17: "ORGANICO", 18: "SECCO RESIDUO", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE", 
-                21: "ORGANICO", 22: "PLASTICA", 23: "ORGANICO", 24: "ORGANICO", 25: "SECCO RESIDUO", 
-                26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO", 29: "PLASTICA", 30: "ORGANICO", 31: "ORGANICO"
+                16: "Nessuna Raccolta", // Sunday
+                17: "ORGANICO", 18: "SECCO RESIDUO", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE", 
+                21: "ORGANICO", 22: "PLASTICA", 
+                23: "Nessuna Raccolta", // Sunday
+                24: "ORGANICO", 25: "SECCO RESIDUO", 
+                26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO", 29: "PLASTICA", 
+                30: "Nessuna Raccolta", // Sunday
+                31: "ORGANICO"
             },
             3: { // April
                 1: "SECCO RESIDUALE", 2: "VETRO E LATTINE", 3: "CARTA E CARTONE", 4: "ORGANICO", 5: "PLASTICA", 
-                6: "ORGANICO", 7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "VETRO E LATTINE", 10: "CARTA E CARTONE", 
-                11: "ORGANICO", 12: "PLASTICA", 13: "ORGANICO", 14: "ORGANICO", 15: "SECCO RESIDUALE", 
-                16: "VETRO E LATTINE", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA", 20: "ORGANICO", 
+                6: "Nessuna Raccolta", // Sunday
+                7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "VETRO E LATTINE", 10: "CARTA E CARTONE", 
+                11: "ORGANICO", 12: "PLASTICA", 
+                13: "Nessuna Raccolta", // Sunday
+                14: "ORGANICO", 15: "SECCO RESIDUALE", 
+                16: "VETRO E LATTINE", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA", 
+                20: "Nessuna Raccolta", // Sunday
                 21: "ORGANICO", 22: "ORGANICO", 23: "CARTA E CARTONE", 24: "ORGANICO", 25: "PLASTICA", 
-                26: "ORGANICO", 27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "VETRO E LATTINE", 30: "ORGANICO"
+                26: "Nessuna Raccolta", // Sunday
+                27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "VETRO E LATTINE", 30: "ORGANICO"
             },
             4: { // May
-                1: "ORGANICO", 2: "ORGANICO", 3: "PLASTICA", 4: "ORGANICO", 5: "ORGANICO", 6: "SECCO RESIDUALE", 
-                7: "VETRO E LATTINE", 8: "CARTA E CARTONE", 9: "ORGANICO", 10: "PLASTICA", 11: "ORGANICO", 
+                1: "ORGANICO", 2: "ORGANICO", 3: "PLASTICA", 
+                4: "Nessuna Raccolta", // Sunday
+                5: "ORGANICO", 6: "SECCO RESIDUALE", 
+                7: "VETRO E LATTINE", 8: "CARTA E CARTONE", 9: "ORGANICO", 10: "PLASTICA", 
+                11: "Nessuna Raccolta", // Sunday
                 12: "ORGANICO", 13: "SECCO RESIDUALE", 14: "VETRO E LATTINE", 15: "CARTA E CARTONE", 
-                16: "ORGANICO", 17: "PLASTICA", 18: "ORGANICO", 19: "ORGANICO", 20: "SECCO RESIDUALE", 
-                21: "VETRO E LATTINE", 22: "CARTA E CARTONE", 23: "ORGANICO", 24: "PLASTICA", 25: "ORGANICO", 
+                16: "ORGANICO", 17: "PLASTICA", 
+                18: "Nessuna Raccolta", // Sunday
+                19: "ORGANICO", 20: "SECCO RESIDUALE", 
+                21: "VETRO E LATTINE", 22: "CARTA E CARTONE", 23: "ORGANICO", 24: "PLASTICA", 
+                25: "Nessuna Raccolta", // Sunday
                 26: "ORGANICO", 27: "SECCO RESIDUALE", 28: "VETRO E LATTINE", 29: "CARTA E CARTONE", 
                 30: "ORGANICO", 31: "PLASTICA"
             },
             5: { // June
-                1: "ORGANICO", 2: "ORGANICO", 3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE", 
-                6: "ORGANICO", 7: "PLASTICA", 8: "ORGANICO", 9: "ORGANICO", 10: "SECCO RESIDUALE", 
-                11: "VETRO E LATTINE", 12: "CARTA E CARTONE", 13: "ORGANICO", 14: "PLASTICA", 15: "ORGANICO", 
+                1: "Nessuna Raccolta", // Sunday
+                2: "ORGANICO", 3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE", 
+                6: "ORGANICO", 7: "PLASTICA", 
+                8: "Nessuna Raccolta", // Sunday
+                9: "ORGANICO", 10: "SECCO RESIDUALE", 
+                11: "VETRO E LATTINE", 12: "CARTA E CARTONE", 13: "ORGANICO", 14: "PLASTICA", 
+                15: "Nessuna Raccolta", // Sunday
                 16: "ORGANICO", 17: "VETRO E LATTINE", 18: "ORGANICO", 19: "CARTA E CARTONE", 20: "ORGANICO", 
-                21: "PLASTICA", 22: "ORGANICO", 23: "ORGANICO", 24: "SECCO RESIDUALE", 25: "ORGANICO", 
-                26: "CARTA E CARTONE", 27: "ORGANICO", 28: "PLASTICA", 29: "ORGANICO", 30: "ORGANICO"
+                21: "PLASTICA", 
+                22: "Nessuna Raccolta", // Sunday
+                23: "ORGANICO", 24: "SECCO RESIDUALE", 25: "ORGANICO", 
+                26: "CARTA E CARTONE", 27: "ORGANICO", 28: "PLASTICA", 
+                29: "Nessuna Raccolta", // Sunday
+                30: "ORGANICO"
             },
             6: { // July
                 1: "VETRO E LATTINE", 2: "ORGANICO", 3: "CARTA E CARTONE", 4: "ORGANICO", 5: "PLASTICA", 
-                6: "ORGANICO", 7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "ORGANICO", 10: "CARTA E CARTONE", 
-                11: "ORGANICO", 12: "PLASTICA", 13: "ORGANICO", 14: "ORGANICO", 15: "VETRO E LATTINE", 
-                16: "ORGANICO", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA", 20: "ORGANICO", 
+                6: "Nessuna Raccolta", // Sunday
+                7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "ORGANICO", 10: "CARTA E CARTONE", 
+                11: "ORGANICO", 12: "PLASTICA", 
+                13: "Nessuna Raccolta", // Sunday
+                14: "ORGANICO", 15: "VETRO E LATTINE", 
+                16: "ORGANICO", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA", 
+                20: "Nessuna Raccolta", // Sunday
                 21: "ORGANICO", 22: "SECCO RESIDUALE", 23: "ORGANICO", 24: "CARTA E CARTONE", 25: "ORGANICO", 
-                26: "PLASTICA", 27: "ORGANICO", 28: "ORGANICO", 29: "VETRO E LATTINE", 30: "ORGANICO", 31: "CARTA E CARTONE"
+                26: "PLASTICA", 
+                27: "Nessuna Raccolta", // Sunday
+                28: "ORGANICO", 29: "VETRO E LATTINE", 30: "ORGANICO", 31: "CARTA E CARTONE"
             },
             7: { // August
-                1: "ORGANICO", 2: "PLASTICA", 3: "ORGANICO", 4: "ORGANICO", 5: "SECCO RESIDUALE", 
-                6: "ORGANICO", 7: "CARTA E CARTONE", 8: "ORGANICO", 9: "PLASTICA", 10: "ORGANICO", 
+                1: "ORGANICO", 2: "PLASTICA", 
+                3: "Nessuna Raccolta", // Sunday
+                4: "ORGANICO", 5: "SECCO RESIDUALE", 
+                6: "ORGANICO", 7: "CARTA E CARTONE", 8: "ORGANICO", 9: "PLASTICA", 
+                10: "Nessuna Raccolta", // Sunday
                 11: "ORGANICO", 12: "VETRO E LATTINE", 13: "ORGANICO", 14: "CARTA E CARTONE", 15: "ORGANICO", 
-                16: "PLASTICA", 17: "ORGANICO", 18: "ORGANICO", 19: "SECCO RESIDUALE", 20: "ORGANICO", 
-                21: "CARTA E CARTONE", 22: "ORGANICO", 23: "PLASTICA", 24: "ORGANICO", 25: "ORGANICO", 
-                26: "VETRO E LATTINE", 27: "ORGANICO", 28: "CARTA E CARTONE", 29: "ORGANICO", 30: "PLASTICA", 31: "ORGANICO"
+                16: "PLASTICA", 
+                17: "Nessuna Raccolta", // Sunday
+                18: "ORGANICO", 19: "SECCO RESIDUALE", 20: "ORGANICO", 
+                21: "CARTA E CARTONE", 22: "ORGANICO", 23: "PLASTICA", 
+                24: "Nessuna Raccolta", // Sunday
+                25: "ORGANICO", 
+                26: "VETRO E LATTINE", 27: "ORGANICO", 28: "CARTA E CARTONE", 29: "ORGANICO", 30: "PLASTICA", 
+                31: "Nessuna Raccolta" // Sunday
             },
             8: { // September
                 1: "ORGANICO", 2: "SECCO RESIDUALE", 3: "ORGANICO", 4: "CARTA E CARTONE", 5: "ORGANICO", 
-                6: "PLASTICA", 7: "ORGANICO", 8: "ORGANICO", 9: "VETRO E LATTINE", 10: "ORGANICO", 
-                11: "CARTA E CARTONE", 12: "ORGANICO", 13: "PLASTICA", 14: "ORGANICO", 15: "ORGANICO", 
+                6: "PLASTICA", 
+                7: "Nessuna Raccolta", // Sunday
+                8: "ORGANICO", 9: "VETRO E LATTINE", 10: "ORGANICO", 
+                11: "CARTA E CARTONE", 12: "ORGANICO", 13: "PLASTICA", 
+                14: "Nessuna Raccolta", // Sunday
+                15: "ORGANICO", 
                 16: "SECCO RESIDUALE", 17: "ORGANICO", 18: "CARTA E CARTONE", 19: "ORGANICO", 20: "PLASTICA", 
-                21: "ORGANICO", 22: "ORGANICO", 23: "VETRO E LATTINE", 24: "ORGANICO", 25: "CARTA E CARTONE", 
-                26: "ORGANICO", 27: "PLASTICA", 28: "ORGANICO", 29: "ORGANICO", 30: "SECCO RESIDUALE"
+                21: "Nessuna Raccolta", // Sunday
+                22: "ORGANICO", 23: "VETRO E LATTINE", 24: "ORGANICO", 25: "CARTA E CARTONE", 
+                26: "ORGANICO", 27: "PLASTICA", 
+                28: "Nessuna Raccolta", // Sunday
+                29: "ORGANICO", 30: "SECCO RESIDUALE"
             },
             9: { // October
-                1: "ORGANICO", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA", 5: "ORGANICO", 
+                1: "ORGANICO", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA", 
+                5: "Nessuna Raccolta", // Sunday
                 6: "ORGANICO", 7: "VETRO E LATTINE", 8: "ORGANICO", 9: "CARTA E CARTONE", 10: "ORGANICO", 
-                11: "PLASTICA", 12: "ORGANICO", 13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "ORGANICO", 
-                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA", 19: "ORGANICO", 20: "ORGANICO", 
+                11: "PLASTICA", 
+                12: "Nessuna Raccolta", // Sunday
+                13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "ORGANICO", 
+                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA", 
+                19: "Nessuna Raccolta", // Sunday
+                20: "ORGANICO", 
                 21: "VETRO E LATTINE", 22: "ORGANICO", 23: "CARTA E CARTONE", 24: "ORGANICO", 25: "PLASTICA", 
-                26: "ORGANICO", 27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "CARTA E CARTONE", 30: "ORGANICO", 31: "PLASTICA"
+                26: "Nessuna Raccolta", // Sunday
+                27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "CARTA E CARTONE", 30: "ORGANICO", 31: "PLASTICA"
             },
             10: { // November
-                1: "PLASTICA", 2: "ORGANICO", 3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE", 
-                6: "ORGANICO", 7: "ORGANICO", 8: "PLASTICA", 9: "ORGANICO", 10: "ORGANICO", 
+                1: "PLASTICA", 
+                2: "Nessuna Raccolta", // Sunday
+                3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE", 
+                6: "ORGANICO", 7: "ORGANICO", 8: "PLASTICA", 
+                9: "Nessuna Raccolta", // Sunday
+                10: "ORGANICO", 
                 11: "SECCO RESIDUALE", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 
-                15: "PLASTICA", 16: "ORGANICO", 17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE", 
-                20: "CARTA E CARTONE", 21: "ORGANICO", 22: "PLASTICA", 23: "ORGANICO", 24: "ORGANICO", 
+                15: "PLASTICA", 
+                16: "Nessuna Raccolta", // Sunday
+                17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE", 
+                20: "CARTA E CARTONE", 21: "ORGANICO", 22: "PLASTICA", 
+                23: "Nessuna Raccolta", // Sunday
+                24: "ORGANICO", 
                 25: "SECCO RESIDUALE", 26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO", 
-                29: "PLASTICA", 30: "ORGANICO"
+                29: "PLASTICA", 
+                30: "Nessuna Raccolta" // Sunday
             },
             11: { // December
                 1: "ORGANICO", 2: "SECCO RESIDUALE", 3: "VETRO E LATTINE", 4: "CARTA E CARTONE", 
-                5: "ORGANICO", 6: "PLASTICA", 7: "ORGANICO", 8: "ORGANICO", 9: "ORGANICO", 
+                5: "ORGANICO", 6: "PLASTICA", 
+                7: "Nessuna Raccolta", // Sunday
+                8: "ORGANICO", 9: "ORGANICO", 
                 10: "VETRO E LATTINE", 11: "CARTA E CARTONE", 12: "ORGANICO", 13: "PLASTICA", 
-                14: "ORGANICO", 15: "ORGANICO", 16: "SECCO RESIDUALE", 17: "CARTA E CARTONE", 
-                18: "ORGANICO", 19: "ORGANICO", 20: "PLASTICA", 21: "ORGANICO", 22: "ORGANICO", 
+                14: "Nessuna Raccolta", // Sunday
+                15: "ORGANICO", 16: "SECCO RESIDUALE", 17: "CARTA E CARTONE", 
+                18: "ORGANICO", 19: "ORGANICO", 20: "PLASTICA", 
+                21: "Nessuna Raccolta", // Sunday
+                22: "ORGANICO", 
                 23: "SECCO RESIDUALE", 24: "CARTA E CARTONE", 25: "ORGANICO", 26: "ORGANICO", 
-                27: "PLASTICA", 28: "ORGANICO", 29: "ORGANICO", 30: "VETRO E LATTINE", 31: "CARTA E CARTONE"
+                27: "PLASTICA", 
+                28: "Nessuna Raccolta", // Sunday
+                29: "ORGANICO", 30: "VETRO E LATTINE", 31: "CARTA E CARTONE"
             }
         };
 
@@ -530,6 +666,7 @@
             if (wasteType.includes("plastica")) return "plastica";
             if (wasteType.includes("carta")) return "carta-cartone";
             if (wasteType.includes("vetro")) return "vetro-lattine";
+            if (wasteType.includes("nessuna")) return "nessuna-raccolta";
             return "";
         }
 
@@ -541,8 +678,10 @@
             return `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`;
         }
 
-        // Current selected date
+        // Current selected date - ensure it's in 2025
         let selectedDate = new Date();
+        // Force the year to be 2025
+        selectedDate.setFullYear(2025);
         
         // Function to update the waste type displays
         function updateWasteInfo(date) {
@@ -595,6 +734,8 @@
         const datePickerButton = document.getElementById("date-picker-button");
         
         let currentCalendarDate = new Date();
+        // Force the year to be 2025
+        currentCalendarDate.setFullYear(2025);
         
         // Open calendar when date picker button is clicked
         datePickerButton.addEventListener("click", function() {
@@ -610,12 +751,20 @@
         
         // Navigate to previous month
         prevMonthButton.addEventListener("click", function() {
+            // Check if going to previous month would go before 2025
+            if (currentCalendarDate.getFullYear() === 2025 && currentCalendarDate.getMonth() === 0) {
+                return; // Don't allow going before January 2025
+            }
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
             renderCalendar(currentCalendarDate);
         });
         
         // Navigate to next month
         nextMonthButton.addEventListener("click", function() {
+            // Check if going to next month would go beyond 2025
+            if (currentCalendarDate.getFullYear() === 2025 && currentCalendarDate.getMonth() === 11) {
+                return; // Don't allow going beyond December 2025
+            }
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
             renderCalendar(currentCalendarDate);
         });
@@ -623,6 +772,8 @@
         // Go to today
         todayButton.addEventListener("click", function() {
             selectedDate = new Date();
+            // Force the year to be 2025
+            selectedDate.setFullYear(2025);
             updateWasteInfo(selectedDate);
             calendarContainer.style.display = "none";
         });
