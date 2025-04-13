@@ -202,6 +202,115 @@
             color: #666;
         }
         
+        /* Waste Search styles */
+        .waste-search-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .waste-search-header {
+            background-color: #008751;
+            color: white;
+            padding: 15px;
+        }
+        
+        .waste-search-header h3 {
+            margin: 0;
+        }
+        
+        .waste-search-content {
+            padding: 20px;
+        }
+        
+        .waste-search-form {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .waste-type-select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            flex-grow: 1;
+        }
+        
+        .search-waste-button {
+            background-color: #008751;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .waste-search-results {
+            margin-top: 15px;
+        }
+        
+        .results-message {
+            text-align: center;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .next-pickups h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        
+        .pickup-cards {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .pickup-card {
+            flex: 1;
+            min-width: 150px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pickup-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: #ccc;
+        }
+        
+        .pickup-card.organico::before { background-color: #8B4513; }
+        .pickup-card.secco-residuale::before { background-color: #808080; }
+        .pickup-card.plastica::before { background-color: #FFD700; }
+        .pickup-card.carta-cartone::before { background-color: #4169E1; }
+        .pickup-card.vetro-lattine::before { background-color: #2E8B57; }
+        
+        .pickup-date {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .pickup-day {
+            color: #666;
+        }
+        
         /* Calendar styles */
         .calendar-container {
             display: none;
@@ -350,6 +459,19 @@
             .waste-info {
                 width: 100%;
             }
+            
+            .waste-search-form {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .pickup-cards {
+                flex-direction: column;
+            }
+            
+            .pickup-card {
+                margin-bottom: 10px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -439,6 +561,45 @@
                 <div class="legend-item">
                     <div class="legend-color nessuna-raccolta"></div>
                     <span>Nessuna Raccolta</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="waste-search-container">
+            <div class="waste-search-header">
+                <h3>Cerca Prossimi Ritiri</h3>
+            </div>
+            <div class="waste-search-content">
+                <div class="waste-search-form">
+                    <label for="waste-type-select">Seleziona tipo di rifiuto:</label>
+                    <select id="waste-type-select" class="waste-type-select">
+                        <option value="ORGANICO">Organico</option>
+                        <option value="SECCO RESIDUALE">Secco Residuale</option>
+                        <option value="PLASTICA">Plastica</option>
+                        <option value="CARTA E CARTONE">Carta e Cartone</option>
+                        <option value="VETRO E LATTINE">Vetro e Lattine</option>
+                    </select>
+                    <button id="search-waste-button" class="search-waste-button">Cerca</button>
+                </div>
+                <div id="waste-search-results" class="waste-search-results">
+                    <div class="results-message">Seleziona un tipo di rifiuto e premi "Cerca" per trovare i prossimi ritiri.</div>
+                    <div class="next-pickups" style="display: none;">
+                        <h4>Prossimi 3 ritiri:</h4>
+                        <div class="pickup-cards">
+                            <div class="pickup-card">
+                                <div class="pickup-date" id="pickup-date-1">Data</div>
+                                <div class="pickup-day" id="pickup-day-1">Giorno</div>
+                            </div>
+                            <div class="pickup-card">
+                                <div class="pickup-date" id="pickup-date-2">Data</div>
+                                <div class="pickup-day" id="pickup-day-2">Giorno</div>
+                            </div>
+                            <div class="pickup-card">
+                                <div class="pickup-date" id="pickup-date-3">Data</div>
+                                <div class="pickup-day" id="pickup-day-3">Giorno</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -858,6 +1019,89 @@
         
         // Initialize the page
         updateWasteInfo(selectedDate);
+        
+        // Waste Search Functionality
+        const wasteTypeSelect = document.getElementById("waste-type-select");
+        const searchWasteButton = document.getElementById("search-waste-button");
+        const wasteSearchResults = document.getElementById("waste-search-results");
+        const nextPickups = wasteSearchResults.querySelector(".next-pickups");
+        const resultsMessage = wasteSearchResults.querySelector(".results-message");
+        
+        // Function to find the next occurrences of a specific waste type
+        function findNextWastePickups(wasteType, startDate, count = 3) {
+            const results = [];
+            const currentDate = new Date(startDate);
+            
+            // Ensure we're looking at 2025
+            currentDate.setFullYear(2025);
+            
+            // Start from tomorrow
+            currentDate.setDate(currentDate.getDate() + 1);
+            
+            // Loop until we find the requested number of occurrences
+            while (results.length < count) {
+                const month = currentDate.getMonth();
+                const day = currentDate.getDate();
+                
+                // Check if this day has the requested waste type
+                if (wasteSchedule[month] && 
+                    wasteSchedule[month][day] && 
+                    wasteSchedule[month][day] === wasteType) {
+                    
+                    // Add to results
+                    results.push(new Date(currentDate));
+                }
+                
+                // Move to next day
+                currentDate.setDate(currentDate.getDate() + 1);
+                
+                // Prevent infinite loop if we can't find enough occurrences
+                // (shouldn't happen with our data, but just in case)
+                if (currentDate.getFullYear() > 2025) {
+                    break;
+                }
+            }
+            
+            return results;
+        }
+        
+        // Handle search button click
+        searchWasteButton.addEventListener("click", function() {
+            const selectedWasteType = wasteTypeSelect.value;
+            const pickupDates = findNextWastePickups(selectedWasteType, new Date());
+            
+            if (pickupDates.length === 0) {
+                resultsMessage.textContent = "Nessun ritiro trovato per questo tipo di rifiuto.";
+                resultsMessage.style.display = "block";
+                nextPickups.style.display = "none";
+                return;
+            }
+            
+            // Update the pickup cards with the found dates
+            for (let i = 0; i < pickupDates.length; i++) {
+                const dateElement = document.getElementById(`pickup-date-${i+1}`);
+                const dayElement = document.getElementById(`pickup-day-${i+1}`);
+                
+                if (dateElement && dayElement) {
+                    const date = pickupDates[i];
+                    dateElement.textContent = `${date.getDate()} ${["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"][date.getMonth()]}`;
+                    dayElement.textContent = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"][date.getDay()];
+                    
+                    // Add color class based on waste type
+                    const parentCard = dateElement.closest('.pickup-card');
+                    if (parentCard) {
+                        // Remove any existing waste type classes
+                        parentCard.classList.remove("organico", "secco-residuale", "plastica", "carta-cartone", "vetro-lattine");
+                        // Add the appropriate class
+                        parentCard.classList.add(getWasteTypeClass(selectedWasteType));
+                    }
+                }
+            }
+            
+            // Show the results
+            resultsMessage.style.display = "none";
+            nextPickups.style.display = "block";
+        });
     </script>
 </body>
 </html>
