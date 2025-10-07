@@ -1,0 +1,239 @@
+/* 
+ * Bootstrap Italia Custom Theme for Partinico Waste Collection PWA
+ * Preserves the green theme (#005e25) and waste type color coding
+ */
+
+:root {
+  /* Primary Brand Colors - Override Bootstrap Italia defaults */
+  --bs-primary: #005e25;
+  --bs-primary-rgb: 0, 94, 37;
+  --bs-primary-text-emphasis: #003d1a;
+  --bs-primary-bg-subtle: rgba(0, 94, 37, 0.1);
+  --bs-primary-border-subtle: rgba(0, 94, 37, 0.25);
+  
+  /* Comune di Partinico Brand Colors */
+  --comune-green: #005e25;
+  --comune-green-light: rgba(0, 94, 37, 0.1);
+  --comune-green-hover: #004d1f;
+  --comune-green-dark: #003d1a;
+  
+  /* Waste Type Color System - Preserved from original */
+  --waste-organico: #8B4513;
+  --waste-organico-rgb: 139, 69, 19;
+  --waste-secco: #808080;
+  --waste-secco-rgb: 128, 128, 128;
+  --waste-plastica: #FFD700;
+  --waste-plastica-rgb: 255, 215, 0;
+  --waste-carta: #4169E1;
+  --waste-carta-rgb: 65, 105, 225;
+  --waste-vetro: #2E8B57;
+  --waste-vetro-rgb: 46, 139, 87;
+  --waste-nessuna: #FF0000;
+  --waste-nessuna-rgb: 255, 0, 0;
+  
+  /* Bootstrap Italia Overrides */
+  --bs-body-bg: #f5f5f5;
+  --bs-body-color: #333;
+  --bs-border-radius: 8px;
+  --bs-border-radius-lg: 8px;
+  --bs-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --bs-box-shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Primary Button Overrides */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--comune-green);
+  --bs-btn-border-color: var(--comune-green);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--comune-green-hover);
+  --bs-btn-hover-border-color: var(--comune-green-hover);
+  --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--comune-green-dark);
+  --bs-btn-active-border-color: var(--comune-green-dark);
+}
+
+/* Header Customizations */
+.it-header-wrapper .it-header-slim-wrapper {
+  background-color: var(--comune-green);
+}
+
+.it-header-wrapper .it-brand-title {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+/* Card Header Customizations */
+.card-header.bg-primary {
+  background-color: var(--comune-green) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Waste Type Badges */
+.badge-waste {
+  font-size: 3.2rem;
+  font-weight: bold;
+  padding: 20px 35px;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  min-width: 80%;
+}
+
+.badge-waste.small {
+  font-size: 1.2rem;
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+
+.badge-waste.organico { 
+  background-color: var(--waste-organico); 
+}
+
+.badge-waste.secco-residuale { 
+  background-color: var(--waste-secco); 
+}
+
+.badge-waste.plastica { 
+  background-color: var(--waste-plastica); 
+  color: #333;
+}
+
+.badge-waste.carta-cartone { 
+  background-color: var(--waste-carta); 
+}
+
+.badge-waste.vetro-lattine { 
+  background-color: var(--waste-vetro); 
+}
+
+.badge-waste.nessuna-raccolta { 
+  background-color: var(--waste-nessuna); 
+}
+
+/* Legend Color Indicators */
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.legend-color.organico { background-color: var(--waste-organico); }
+.legend-color.secco-residuale { background-color: var(--waste-secco); }
+.legend-color.plastica { background-color: var(--waste-plastica); }
+.legend-color.carta-cartone { background-color: var(--waste-carta); }
+.legend-color.vetro-lattine { background-color: var(--waste-vetro); }
+.legend-color.nessuna-raccolta { background-color: var(--waste-nessuna); }
+
+/* Pickup Cards with Top Border Indicators */
+.pickup-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.pickup-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #ccc;
+}
+
+.pickup-card.organico::before { background-color: var(--waste-organico); }
+.pickup-card.secco-residuale::before { background-color: var(--waste-secco); }
+.pickup-card.plastica::before { background-color: var(--waste-plastica); }
+.pickup-card.carta-cartone::before { background-color: var(--waste-carta); }
+.pickup-card.vetro-lattine::before { background-color: var(--waste-vetro); }
+
+/* Calendar Customizations */
+.calendar-day.selected {
+  background-color: var(--comune-green);
+  color: white;
+}
+
+.calendar-day:hover {
+  background-color: var(--comune-green-light);
+}
+
+.calendar-nav .btn,
+.calendar-footer .btn {
+  background-color: var(--comune-green);
+  border-color: var(--comune-green);
+  color: white;
+}
+
+.calendar-nav .btn:hover,
+.calendar-footer .btn:hover {
+  background-color: var(--comune-green-hover);
+  border-color: var(--comune-green-hover);
+}
+
+/* Install Button Customizations */
+.install-button {
+  background-color: white;
+  color: var(--comune-green);
+  border: 2px solid var(--comune-green);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.install-button:hover {
+  background-color: var(--comune-green);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.install-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .it-header-wrapper .it-header-slim-wrapper-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .badge-waste {
+    font-size: 2.5rem;
+    width: 100%;
+    padding: 15px 20px;
+  }
+  
+  .install-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .it-brand-title {
+    font-size: 1.2rem !important;
+  }
+  
+  .badge-waste {
+    font-size: 2.2rem;
+  }
+}
+
+/* Dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bs-body-bg: #1a1a1a;
+    --bs-body-color: #ffffff;
+  }
+}

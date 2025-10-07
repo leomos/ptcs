@@ -1,0 +1,23 @@
+.highlight .copy-button-container {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.highlight {
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  position: relative;
+  @include media-breakpoint-up(sm) {
+    padding: 1.5rem;
+  }
+  pre {
+    margin-bottom: 0;
+    code {
+      font-size: 1rem;
+      color: #eee;
+    }
+  }
+}
