@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,14 @@
     <link rel="apple-touch-icon" href="icons/icon-152x152.png">
     <link rel="apple-touch-icon" sizes="152x152" href="icons/icon-152x152.png">
     <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192x192.png">
-    
+
     <!-- Bootstrap Italia CSS -->
     <link rel="stylesheet" href="bootstrap-italia/css/bootstrap-italia.min.css">
     <!-- Custom Theme CSS -->
     <link rel="stylesheet" href="custom-theme.css">
-        
+
 </head>
+
 <body>
     <!-- Bootstrap Italia Header -->
     <header class="it-header-wrapper">
@@ -30,7 +32,8 @@
                         <div class="it-header-slim-wrapper-content">
                             <div class="header-slim-left">
                                 <div class="d-flex align-items-center">
-                                    <img src="/cropped-Partinico-Logo-New.png" alt="Comune di Partinico" height="40" class="me-2">
+                                    <img src="/cropped-Partinico-Logo-New.png" alt="Comune di Partinico" height="40"
+                                        class="me-2">
                                     <div class="it-brand-text">
                                         <h1 class="it-brand-title">Raccolta Differenziata - Partinico</h1>
                                     </div>
@@ -38,8 +41,11 @@
                             </div>
                             <div class="header-slim-right">
                                 <div class="d-flex align-items-center gap-3">
-                                    <button id="install-button" class="btn btn-outline-light btn-sm install-button" style="display: none;">
-                                        <svg class="icon icon-sm me-1"><use href="bootstrap-italia/svg/sprites.svg#it-plus"></use></svg>
+                                    <button id="install-button" class="btn btn-outline-light btn-sm install-button"
+                                        style="display: none;">
+                                        <svg class="icon icon-sm me-1 dark">
+                                            <use href="bootstrap-italia/svg/sprites.svg#it-plus"></use>
+                                        </svg>
                                         Installa
                                     </button>
                                 </div>
@@ -53,7 +59,7 @@
 
     <!-- Main Content Container -->
     <div class="container">
- 
+
         <!-- Today's Waste Text -->
         <div class="mb-4 mt-2">
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -61,16 +67,19 @@
                     <span id="display-date-label">OGGI</span> - <span id="today-date"></span>
                 </h5>
                 <button id="date-picker-button" class="btn btn-sm btn-outline">
-                    <svg class="icon icon-sm me-1"><use href="bootstrap-italia/svg/sprites.svg#it-calendar"></use></svg>
-                    Scegli Data
+                    <svg class="icon icon-sm me-1">
+                        <use href="bootstrap-italia/svg/sprites.svg#it-calendar"></use>
+                    </svg>
+                    Scegli data
                 </button>
             </div>
             <div class="text-center">
                 <div id="today-waste-type" class="badge-waste mb-3">Caricamento...</div>
-                <p class="mb-0">Esponi la frazione all'esterno della tua abitazione dalle ore 20:00 del giorno precedente fino e non oltre le ore 04:00 del giorno indicato.</p>
+                <p class="mb-0">Esponi la frazione all'esterno della tua abitazione dalle ore 20:00 del giorno
+                    precedente fino e non oltre le ore 04:00 del giorno indicato.</p>
             </div>
         </div>
- 
+
         <!-- Next Days Cards -->
         <div class="row mb-4">
             <div class="col-md-6">
@@ -93,114 +102,113 @@
                         </h6>
                     </div>
                     <div class="text-center">
-                            <div id="day-after-waste-type" class="badge-waste small">Caricamento...</div>
+                        <div id="day-after-waste-type" class="badge-waste small">Caricamento...</div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Legend Card -->
-        <div class="card-wrapper mb-4">
-            <div class="card" style="background-color: var(--bs-body-bg);">
-                <div class="card-header" style="background-color: var(--bs-body-bg); color: #515151;">
-                    <h5 class="card-title mb-0">Legenda Rifiuti</h5>
+        <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0">
+                    Legenda rifiuti
+                </h5>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-12 mb-2">
+                    <div class="d-flex align-items-center">
+                        <span class="legend-color organico me-2"></span>
+                        <span>Organico</span>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6 col-12 mb-2">
-                            <div class="d-flex align-items-center">
-                                <span class="legend-color organico me-2"></span>
-                                <span>Organico</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12 mb-2">
-                            <div class="d-flex align-items-center">
-                                <span class="legend-color secco-residuale me-2"></span>
-                                <span>Secco Residuale</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12 mb-2">
-                            <div class="d-flex align-items-center">
-                                <span class="legend-color plastica me-2"></span>
-                                <span>Plastica</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12 mb-2">
-                            <div class="d-flex align-items-center">
-                                <span class="legend-color carta-cartone me-2"></span>
-                                <span>Carta e Cartone</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12 mb-2">
-                            <div class="d-flex align-items-center">
-                                <span class="legend-color vetro-lattine me-2"></span>
-                                <span>Vetro e Lattine</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12 mb-2">
-                            <div class="d-flex align-items-center">
-                                <span class="legend-color nessuna-raccolta me-2"></span>
-                                <span>Nessuna Raccolta</span>
-                            </div>
-                        </div>
+                <div class="col-md-6 col-12 mb-2">
+                    <div class="d-flex align-items-center">
+                        <span class="legend-color secco-residuale me-2"></span>
+                        <span>Secco Residuale</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 mb-2">
+                    <div class="d-flex align-items-center">
+                        <span class="legend-color plastica me-2"></span>
+                        <span>Plastica</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 mb-2">
+                    <div class="d-flex align-items-center">
+                        <span class="legend-color carta-cartone me-2"></span>
+                        <span>Carta e Cartone</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 mb-2">
+                    <div class="d-flex align-items-center">
+                        <span class="legend-color vetro-lattine me-2"></span>
+                        <span>Vetro e Lattine</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 mb-2">
+                    <div class="d-flex align-items-center">
+                        <span class="legend-color nessuna-raccolta me-2"></span>
+                        <span>Nessuna Raccolta</span>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Waste Search Card -->
-        <div class="card-wrapper mb-4">
-            <div class="card" style="background-color: var(--bs-body-bg);">
-                <div class="card-header" style="background-color: var(--bs-body-bg); color: #515151;">
-                    <h5 class="card-title mb-0" style="color: #515151;">Cerca Prossimi Ritiri</h5>
+        <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-0">
+                    Cerca prossimi ritiri
+                </h5>
+            </div>
+            <div class="row align-items-center mb-3 py-2">
+                <div class="col select-wrapper">
+                    <select id="waste-type-select" class="form-control">
+                        <option value="ORGANICO">Organico</option>
+                        <option value="SECCO RESIDUALE">Secco Residuale</option>
+                        <option value="PLASTICA">Plastica</option>
+                        <option value="CARTA E CARTONE">Carta e Cartone</option>
+                        <option value="VETRO E LATTINE">Vetro e Lattine</option>
+                    </select>
                 </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <div class="form-group">
-                            <label for="waste-type-select" class="form-label">Seleziona tipo di rifiuto:</label>
-                            <select id="waste-type-select" class="form-control">
-                                <option value="ORGANICO">Organico</option>
-                                <option value="SECCO RESIDUALE">Secco Residuale</option>
-                                <option value="PLASTICA">Plastica</option>
-                                <option value="CARTA E CARTONE">Carta e Cartone</option>
-                                <option value="VETRO E LATTINE">Vetro e Lattine</option>
-                            </select>
-                        </div>
-                        <button id="search-waste-button" class="btn btn-primary mt-2">
-                            <svg class="icon icon-sm me-1"><use href="bootstrap-italia/svg/sprites.svg#it-search"></use></svg>
-                            Cerca
-                        </button>
-                    </div>
-                    <div id="waste-search-results">
-                        <div class="results-message text-center text-muted">
-                            Seleziona un tipo di rifiuto e premi "Cerca" per trovare i prossimi ritiri.
-                        </div>
-                        <div class="next-pickups" style="display: none;">
-                            <h6>Prossimi 3 ritiri:</h6>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 mb-3">
-                                    <div class="card pickup-card" style="background-color: var(--bs-body-bg);">
-                                        <div class="card-body text-center">
-                                            <div class="pickup-date fw-bold" id="pickup-date-1">Data</div>
-                                            <div class="pickup-day text-muted" id="pickup-day-1">Giorno</div>
-                                        </div>
-                                    </div>
+                <div class="col">
+                    <button id="search-waste-button" class="btn btn-primary mt-2">
+                        <svg class="icon icon-light icon-sm me-1">
+                            <use href="bootstrap-italia/svg/sprites.svg#it-search"></use>
+                        </svg>
+                        Cerca
+                    </button>
+                </div>
+            </div>
+            <div id="waste-search-results">
+                <div class="results-message text-center text-muted">
+                    Seleziona un tipo di rifiuto e premi "Cerca" per trovare i prossimi ritiri.
+                </div>
+                <div class="next-pickups" style="display: none;">
+                    <h6>Prossimi 3 ritiri:</h6>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="it-card pickup-card">
+                                <div class="it-card-body text-center">
+                                    <div class="pickup-date fw-bold" id="pickup-date-1">Data</div>
+                                    <div class="pickup-day text-muted" id="pickup-day-1">Giorno</div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 mb-3">
-                                    <div class="card pickup-card" style="background-color: var(--bs-body-bg);">
-                                        <div class="card-body text-center">
-                                            <div class="pickup-date fw-bold" id="pickup-date-2">Data</div>
-                                            <div class="pickup-day text-muted" id="pickup-day-2">Giorno</div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="it-card pickup-card">
+                                <div class="it-card-body text-center">
+                                    <div class="pickup-date fw-bold" id="pickup-date-2">Data</div>
+                                    <div class="pickup-day text-muted" id="pickup-day-2">Giorno</div>
                                 </div>
-                                <div class="col-lg-4 col-md-6 mb-3">
-                                    <div class="card pickup-card" style="background-color: var(--bs-body-bg);">
-                                        <div class="card-body text-center">
-                                            <div class="pickup-date fw-bold" id="pickup-date-3">Data</div>
-                                            <div class="pickup-day text-muted" id="pickup-day-3">Giorno</div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-3">
+                            <div class="it-card pickup-card">
+                                <div class="it-card-body text-center">
+                                    <div class="pickup-date fw-bold" id="pickup-date-3">Data</div>
+                                    <div class="pickup-day text-muted" id="pickup-day-3">Giorno</div>
                                 </div>
                             </div>
                         </div>
@@ -208,7 +216,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Footer -->
         <footer class="mt-5">
             <div class="text-center text-muted">
@@ -219,17 +227,22 @@
     </div>
 
     <!-- Bootstrap Italia Calendar Modal -->
-    <div class="modal fade" id="calendar-container" tabindex="-1" aria-labelledby="calendarModalLabel" aria-hidden="true">
+    <div class="modal fade" id="calendar-container" tabindex="-1" aria-labelledby="calendarModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="calendar-month-year">Mese Anno</h5>
                     <div class="d-flex gap-2">
                         <button type="button" class="btn btn-primary btn-sm" id="prev-month">
-                            <svg class="icon icon-sm"><use href="bootstrap-italia/svg/sprites.svg#it-chevron-left"></use></svg>
+                            <svg class="icon icon-sm">
+                                <use href="bootstrap-italia/svg/sprites.svg#it-chevron-left"></use>
+                            </svg>
                         </button>
                         <button type="button" class="btn btn-primary btn-sm" id="next-month">
-                            <svg class="icon icon-sm"><use href="bootstrap-italia/svg/sprites.svg#it-chevron-right"></use></svg>
+                            <svg class="icon icon-sm">
+                                <use href="bootstrap-italia/svg/sprites.svg#it-chevron-right"></use>
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -243,13 +256,14 @@
                         <div class="calendar-day-header">V</div>
                         <div class="calendar-day-header">S</div>
                         <div class="calendar-day-header">D</div>
-                        
+
                         <!-- Calendar days will be inserted here by JavaScript -->
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="today-button">Oggi</button>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal" id="close-calendar">Chiudi</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"
+                        id="close-calendar">Chiudi</button>
                 </div>
             </div>
         </div>
@@ -264,185 +278,185 @@
         const wasteSchedule = {
             // Month indexes are 0-based (0 = January, 11 = December)
             0: { // January
-                1: "Nessuna Raccolta", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA", 
+                1: "Nessuna Raccolta", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA",
                 5: "Nessuna Raccolta", // Sunday
-                6: "Nessuna Raccolta", 7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "CARTA E CARTONE", 10: "ORGANICO", 
-                11: "PLASTICA", 
+                6: "Nessuna Raccolta", 7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "CARTA E CARTONE", 10: "ORGANICO",
+                11: "PLASTICA",
                 12: "Nessuna Raccolta", // Sunday
-                13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "VETRO E LATTINE", 
-                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA", 
+                13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "VETRO E LATTINE",
+                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA",
                 19: "Nessuna Raccolta", // Sunday
-                20: "ORGANICO", 
-                21: "SECCO RESIDUALE", 22: "CARTA E CARTONE", 23: "ORGANICO", 24: "ORGANICO", 25: "PLASTICA", 
+                20: "ORGANICO",
+                21: "SECCO RESIDUALE", 22: "CARTA E CARTONE", 23: "ORGANICO", 24: "ORGANICO", 25: "PLASTICA",
                 26: "Nessuna Raccolta", // Sunday
                 27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "VETRO E LATTINE", 30: "CARTA E CARTONE", 31: "ORGANICO"
             },
             1: { // February
-                1: "PLASTICA", 
+                1: "PLASTICA",
                 2: "Nessuna Raccolta", // Sunday
-                3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE", 
-                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA", 
+                3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE",
+                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA",
                 9: "Nessuna Raccolta", // Sunday
-                10: "ORGANICO", 
-                11: "SECCO RESIDUALE", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 15: "PLASTICA", 
+                10: "ORGANICO",
+                11: "SECCO RESIDUALE", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 15: "PLASTICA",
                 16: "Nessuna Raccolta", // Sunday
-                17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE", 
-                21: "ORGANICO", 22: "PLASTICA", 
+                17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE",
+                21: "ORGANICO", 22: "PLASTICA",
                 23: "Nessuna Raccolta", // Sunday
-                24: "ORGANICO", 25: "SECCO RESIDUALE", 
+                24: "ORGANICO", 25: "SECCO RESIDUALE",
                 26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO"
             },
             2: { // March
-                1: "PLASTICA", 
+                1: "PLASTICA",
                 2: "Nessuna Raccolta", // Sunday
-                3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE", 
-                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA", 
+                3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE",
+                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA",
                 9: "Nessuna Raccolta", // Sunday
-                10: "ORGANICO", 
-                11: "SECCO RESIDUO", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 15: "PLASTICA", 
+                10: "ORGANICO",
+                11: "SECCO RESIDUO", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 15: "PLASTICA",
                 16: "Nessuna Raccolta", // Sunday
-                17: "ORGANICO", 18: "SECCO RESIDUO", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE", 
-                21: "ORGANICO", 22: "PLASTICA", 
+                17: "ORGANICO", 18: "SECCO RESIDUO", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE",
+                21: "ORGANICO", 22: "PLASTICA",
                 23: "Nessuna Raccolta", // Sunday
-                24: "ORGANICO", 25: "SECCO RESIDUO", 
-                26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO", 29: "PLASTICA", 
+                24: "ORGANICO", 25: "SECCO RESIDUO",
+                26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO", 29: "PLASTICA",
                 30: "Nessuna Raccolta", // Sunday
                 31: "ORGANICO"
             },
             3: { // April
-                1: "SECCO RESIDUALE", 2: "VETRO E LATTINE", 3: "CARTA E CARTONE", 4: "ORGANICO", 5: "PLASTICA", 
+                1: "SECCO RESIDUALE", 2: "VETRO E LATTINE", 3: "CARTA E CARTONE", 4: "ORGANICO", 5: "PLASTICA",
                 6: "Nessuna Raccolta", // Sunday
-                7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "VETRO E LATTINE", 10: "CARTA E CARTONE", 
-                11: "ORGANICO", 12: "PLASTICA", 
+                7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "VETRO E LATTINE", 10: "CARTA E CARTONE",
+                11: "ORGANICO", 12: "PLASTICA",
                 13: "Nessuna Raccolta", // Sunday
-                14: "ORGANICO", 15: "SECCO RESIDUALE", 
-                16: "VETRO E LATTINE", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA", 
+                14: "ORGANICO", 15: "SECCO RESIDUALE",
+                16: "VETRO E LATTINE", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA",
                 20: "Nessuna Raccolta", // Sunday
-                21: "Nessuna Raccolta", 22: "ORGANICO", 23: "CARTA E CARTONE", 24: "ORGANICO", 25:  "Nessuna Raccolta", 
+                21: "Nessuna Raccolta", 22: "ORGANICO", 23: "CARTA E CARTONE", 24: "ORGANICO", 25: "Nessuna Raccolta",
                 26: "PLASTICA", // Sunday
                 27: "Nessuna Raccolta", 28: "SECCO RESIDUALE", 29: "VETRO E LATTINE", 30: "ORGANICO"
             },
             4: { // May
-                1: "Nessuna Raccolta", 2: "ORGANICO", 3: "PLASTICA", 
+                1: "Nessuna Raccolta", 2: "ORGANICO", 3: "PLASTICA",
                 4: "Nessuna Raccolta", // Sunday
-                5: "ORGANICO", 6: "SECCO RESIDUALE", 
-                7: "VETRO E LATTINE", 8: "CARTA E CARTONE", 9: "ORGANICO", 10: "PLASTICA", 
+                5: "ORGANICO", 6: "SECCO RESIDUALE",
+                7: "VETRO E LATTINE", 8: "CARTA E CARTONE", 9: "ORGANICO", 10: "PLASTICA",
                 11: "Nessuna Raccolta", // Sunday
-                12: "ORGANICO", 13: "SECCO RESIDUALE", 14: "VETRO E LATTINE", 15: "CARTA E CARTONE", 
-                16: "ORGANICO", 17: "PLASTICA", 
+                12: "ORGANICO", 13: "SECCO RESIDUALE", 14: "VETRO E LATTINE", 15: "CARTA E CARTONE",
+                16: "ORGANICO", 17: "PLASTICA",
                 18: "Nessuna Raccolta", // Sunday
-                19: "ORGANICO", 20: "SECCO RESIDUALE", 
-                21: "VETRO E LATTINE", 22: "CARTA E CARTONE", 23: "ORGANICO", 24: "PLASTICA", 
+                19: "ORGANICO", 20: "SECCO RESIDUALE",
+                21: "VETRO E LATTINE", 22: "CARTA E CARTONE", 23: "ORGANICO", 24: "PLASTICA",
                 25: "Nessuna Raccolta", // Sunday
-                26: "ORGANICO", 27: "SECCO RESIDUALE", 28: "VETRO E LATTINE", 29: "CARTA E CARTONE", 
+                26: "ORGANICO", 27: "SECCO RESIDUALE", 28: "VETRO E LATTINE", 29: "CARTA E CARTONE",
                 30: "ORGANICO", 31: "PLASTICA"
             },
             5: { // June
                 1: "Nessuna Raccolta", // Sunday
-                2: "Nessuna Raccolta", 3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE", 
-                6: "ORGANICO", 7: "PLASTICA", 
+                2: "Nessuna Raccolta", 3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE",
+                6: "ORGANICO", 7: "PLASTICA",
                 8: "Nessuna Raccolta", // Sunday
-                9: "ORGANICO", 10: "SECCO RESIDUALE", 
-                11: "VETRO E LATTINE", 12: "CARTA E CARTONE", 13: "ORGANICO", 14: "PLASTICA", 
+                9: "ORGANICO", 10: "SECCO RESIDUALE",
+                11: "VETRO E LATTINE", 12: "CARTA E CARTONE", 13: "ORGANICO", 14: "PLASTICA",
                 15: "Nessuna Raccolta", // Sunday
-                16: "ORGANICO", 17: "VETRO E LATTINE", 18: "ORGANICO", 19: "CARTA E CARTONE", 20: "ORGANICO", 
-                21: "PLASTICA", 
+                16: "ORGANICO", 17: "VETRO E LATTINE", 18: "ORGANICO", 19: "CARTA E CARTONE", 20: "ORGANICO",
+                21: "PLASTICA",
                 22: "Nessuna Raccolta", // Sunday
-                23: "ORGANICO", 24: "SECCO RESIDUALE", 25: "ORGANICO", 
-                26: "CARTA E CARTONE", 27: "ORGANICO", 28: "PLASTICA", 
+                23: "ORGANICO", 24: "SECCO RESIDUALE", 25: "ORGANICO",
+                26: "CARTA E CARTONE", 27: "ORGANICO", 28: "PLASTICA",
                 29: "Nessuna Raccolta", // Sunday
                 30: "ORGANICO"
             },
             6: { // July
-                1: "VETRO E LATTINE", 2: "ORGANICO", 3: "CARTA E CARTONE", 4: "ORGANICO", 5: "PLASTICA", 
+                1: "VETRO E LATTINE", 2: "ORGANICO", 3: "CARTA E CARTONE", 4: "ORGANICO", 5: "PLASTICA",
                 6: "Nessuna Raccolta", // Sunday
-                7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "ORGANICO", 10: "CARTA E CARTONE", 
-                11: "ORGANICO", 12: "PLASTICA", 
+                7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "ORGANICO", 10: "CARTA E CARTONE",
+                11: "ORGANICO", 12: "PLASTICA",
                 13: "Nessuna Raccolta", // Sunday
-                14: "ORGANICO", 15: "VETRO E LATTINE", 
-                16: "ORGANICO", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA", 
+                14: "ORGANICO", 15: "VETRO E LATTINE",
+                16: "ORGANICO", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA",
                 20: "Nessuna Raccolta", // Sunday
-                21: "ORGANICO", 22: "SECCO RESIDUALE", 23: "ORGANICO", 24: "CARTA E CARTONE", 25: "ORGANICO", 
-                26: "PLASTICA", 
+                21: "ORGANICO", 22: "SECCO RESIDUALE", 23: "ORGANICO", 24: "CARTA E CARTONE", 25: "ORGANICO",
+                26: "PLASTICA",
                 27: "Nessuna Raccolta", // Sunday
                 28: "ORGANICO", 29: "VETRO E LATTINE", 30: "ORGANICO", 31: "CARTA E CARTONE"
             },
             7: { // August
-                1: "ORGANICO", 2: "PLASTICA", 
+                1: "ORGANICO", 2: "PLASTICA",
                 3: "Nessuna Raccolta", // Sunday
-                4: "ORGANICO", 5: "SECCO RESIDUALE", 
-                6: "ORGANICO", 7: "CARTA E CARTONE", 8: "ORGANICO", 9: "PLASTICA", 
+                4: "ORGANICO", 5: "SECCO RESIDUALE",
+                6: "ORGANICO", 7: "CARTA E CARTONE", 8: "ORGANICO", 9: "PLASTICA",
                 10: "Nessuna Raccolta", // Sunday
-                11: "ORGANICO", 12: "VETRO E LATTINE", 13: "ORGANICO", 14: "CARTA E CARTONE", 15: "Nessuna Raccolta", 
-                16: "PLASTICA", 
+                11: "ORGANICO", 12: "VETRO E LATTINE", 13: "ORGANICO", 14: "CARTA E CARTONE", 15: "Nessuna Raccolta",
+                16: "PLASTICA",
                 17: "Nessuna Raccolta", // Sunday
-                18: "ORGANICO", 19: "SECCO RESIDUALE", 20: "ORGANICO", 
-                21: "CARTA E CARTONE", 22: "ORGANICO", 23: "PLASTICA", 
+                18: "ORGANICO", 19: "SECCO RESIDUALE", 20: "ORGANICO",
+                21: "CARTA E CARTONE", 22: "ORGANICO", 23: "PLASTICA",
                 24: "Nessuna Raccolta", // Sunday
-                25: "ORGANICO", 
-                26: "VETRO E LATTINE", 27: "ORGANICO", 28: "CARTA E CARTONE", 29: "ORGANICO", 30: "PLASTICA", 
+                25: "ORGANICO",
+                26: "VETRO E LATTINE", 27: "ORGANICO", 28: "CARTA E CARTONE", 29: "ORGANICO", 30: "PLASTICA",
                 31: "Nessuna Raccolta" // Sunday
             },
             8: { // September
-                1: "ORGANICO", 2: "SECCO RESIDUALE", 3: "ORGANICO", 4: "CARTA E CARTONE", 5: "ORGANICO", 
-                6: "PLASTICA", 
+                1: "ORGANICO", 2: "SECCO RESIDUALE", 3: "ORGANICO", 4: "CARTA E CARTONE", 5: "ORGANICO",
+                6: "PLASTICA",
                 7: "Nessuna Raccolta", // Sunday
-                8: "ORGANICO", 9: "VETRO E LATTINE", 10: "ORGANICO", 
-                11: "CARTA E CARTONE", 12: "ORGANICO", 13: "PLASTICA", 
+                8: "ORGANICO", 9: "VETRO E LATTINE", 10: "ORGANICO",
+                11: "CARTA E CARTONE", 12: "ORGANICO", 13: "PLASTICA",
                 14: "Nessuna Raccolta", // Sunday
-                15: "ORGANICO", 
-                16: "SECCO RESIDUALE", 17: "ORGANICO", 18: "CARTA E CARTONE", 19: "ORGANICO", 20: "PLASTICA", 
+                15: "ORGANICO",
+                16: "SECCO RESIDUALE", 17: "ORGANICO", 18: "CARTA E CARTONE", 19: "ORGANICO", 20: "PLASTICA",
                 21: "Nessuna Raccolta", // Sunday
-                22: "ORGANICO", 23: "VETRO E LATTINE", 24: "ORGANICO", 25: "CARTA E CARTONE", 
-                26: "ORGANICO", 27: "PLASTICA", 
+                22: "ORGANICO", 23: "VETRO E LATTINE", 24: "ORGANICO", 25: "CARTA E CARTONE",
+                26: "ORGANICO", 27: "PLASTICA",
                 28: "Nessuna Raccolta", // Sunday
                 29: "ORGANICO", 30: "SECCO RESIDUALE"
             },
             9: { // October
-                1: "ORGANICO", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA", 
+                1: "ORGANICO", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA",
                 5: "Nessuna Raccolta", // Sunday
-                6: "ORGANICO", 7: "VETRO E LATTINE", 8: "ORGANICO", 9: "CARTA E CARTONE", 10: "ORGANICO", 
-                11: "PLASTICA", 
+                6: "ORGANICO", 7: "VETRO E LATTINE", 8: "ORGANICO", 9: "CARTA E CARTONE", 10: "ORGANICO",
+                11: "PLASTICA",
                 12: "Nessuna Raccolta", // Sunday
-                13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "ORGANICO", 
-                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA", 
+                13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "ORGANICO",
+                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA",
                 19: "Nessuna Raccolta", // Sunday
-                20: "ORGANICO", 
-                21: "VETRO E LATTINE", 22: "ORGANICO", 23: "CARTA E CARTONE", 24: "ORGANICO", 25: "PLASTICA", 
+                20: "ORGANICO",
+                21: "VETRO E LATTINE", 22: "ORGANICO", 23: "CARTA E CARTONE", 24: "ORGANICO", 25: "PLASTICA",
                 26: "Nessuna Raccolta", // Sunday
                 27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "CARTA E CARTONE", 30: "ORGANICO", 31: "PLASTICA"
             },
             10: { // November
-                1: "Nessuna Raccolta", 
+                1: "Nessuna Raccolta",
                 2: "Nessuna Raccolta", // Sunday
-                3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE", 
-                6: "Nessuna Raccolta", 7: "ORGANICO", 8: "PLASTICA", 
+                3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE",
+                6: "Nessuna Raccolta", 7: "ORGANICO", 8: "PLASTICA",
                 9: "Nessuna Raccolta", // Sunday
-                10: "ORGANICO", 
-                11: "SECCO RESIDUALE", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 
-                15: "PLASTICA", 
+                10: "ORGANICO",
+                11: "SECCO RESIDUALE", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO",
+                15: "PLASTICA",
                 16: "Nessuna Raccolta", // Sunday
-                17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE", 
-                20: "CARTA E CARTONE", 21: "ORGANICO", 22: "PLASTICA", 
+                17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE",
+                20: "CARTA E CARTONE", 21: "ORGANICO", 22: "PLASTICA",
                 23: "Nessuna Raccolta", // Sunday
-                24: "ORGANICO", 
-                25: "SECCO RESIDUALE", 26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO", 
-                29: "PLASTICA", 
+                24: "ORGANICO",
+                25: "SECCO RESIDUALE", 26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO",
+                29: "PLASTICA",
                 30: "Nessuna Raccolta" // Sunday
             },
             11: { // December
-                1: "ORGANICO", 2: "SECCO RESIDUALE", 3: "VETRO E LATTINE", 4: "CARTA E CARTONE", 
-                5: "ORGANICO", 6: "PLASTICA", 
+                1: "ORGANICO", 2: "SECCO RESIDUALE", 3: "VETRO E LATTINE", 4: "CARTA E CARTONE",
+                5: "ORGANICO", 6: "PLASTICA",
                 7: "Nessuna Raccolta", // Sunday
-                8: "Nessuna Raccolta", 9: "ORGANICO", 
-                10: "VETRO E LATTINE", 11: "CARTA E CARTONE", 12: "ORGANICO", 13: "PLASTICA", 
+                8: "Nessuna Raccolta", 9: "ORGANICO",
+                10: "VETRO E LATTINE", 11: "CARTA E CARTONE", 12: "ORGANICO", 13: "PLASTICA",
                 14: "Nessuna Raccolta", // Sunday
-                15: "ORGANICO", 16: "SECCO RESIDUALE", 17: "CARTA E CARTONE", 
-                18: "ORGANICO", 19: "ORGANICO", 20: "PLASTICA", 
+                15: "ORGANICO", 16: "SECCO RESIDUALE", 17: "CARTA E CARTONE",
+                18: "ORGANICO", 19: "ORGANICO", 20: "PLASTICA",
                 21: "Nessuna Raccolta", // Sunday
-                22: "ORGANICO", 
-                23: "SECCO RESIDUALE", 24: "CARTA E CARTONE", 25: "Nessuna Raccolta", 26: "Nessuna Raccolta", 
-                27: "PLASTICA", 
+                22: "ORGANICO",
+                23: "SECCO RESIDUALE", 24: "CARTA E CARTONE", 25: "Nessuna Raccolta", 26: "Nessuna Raccolta",
+                27: "PLASTICA",
                 28: "Nessuna Raccolta", // Sunday
                 29: "ORGANICO", 30: "VETRO E LATTINE", 31: "CARTA E CARTONE"
             }
@@ -464,7 +478,7 @@
         function formatDate(date) {
             const days = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
             const months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-            
+
             return `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`;
         }
 
@@ -472,7 +486,7 @@
         let selectedDate = new Date();
         // Force the year to be 2025
         selectedDate.setFullYear(2025);
-        
+
         // Function to update the waste type displays
         function updateWasteInfo(date) {
             const displayDate = new Date(date);
@@ -480,39 +494,39 @@
             tomorrow.setDate(displayDate.getDate() + 1);
             const dayAfter = new Date(displayDate);
             dayAfter.setDate(displayDate.getDate() + 2);
-            
+
             // Update display date label (OGGI or DATA SELEZIONATA)
             const today = new Date();
-            const isToday = displayDate.getDate() === today.getDate() && 
-                           displayDate.getMonth() === today.getMonth() && 
-                           displayDate.getFullYear() === today.getFullYear();
-            
+            const isToday = displayDate.getDate() === today.getDate() &&
+                displayDate.getMonth() === today.getMonth() &&
+                displayDate.getFullYear() === today.getFullYear();
+
             document.getElementById("display-date-label").textContent = isToday ? "OGGI" : "DATA SELEZIONATA";
-            
+
             // Set dates
             document.getElementById("today-date").textContent = formatDate(displayDate);
             document.getElementById("tomorrow-date").textContent = formatDate(tomorrow);
             document.getElementById("day-after-date").textContent = formatDate(dayAfter);
-            
+
             // Get waste types
             const displayDateWaste = wasteSchedule[displayDate.getMonth()][displayDate.getDate()] || "Nessuna Raccolta";
             const tomorrowWaste = wasteSchedule[tomorrow.getMonth()][tomorrow.getDate()] || "Nessuna Raccolta";
             const dayAfterWaste = wasteSchedule[dayAfter.getMonth()][dayAfter.getDate()] || "Nessuna Raccolta";
-            
+
             // Set waste types with appropriate classes
             const todayWasteElement = document.getElementById("today-waste-type");
             todayWasteElement.textContent = displayDateWaste;
             todayWasteElement.className = "badge-waste mb-4 " + getWasteTypeClass(displayDateWaste);
-            
+
             const tomorrowWasteElement = document.getElementById("tomorrow-waste-type");
             tomorrowWasteElement.textContent = tomorrowWaste;
             tomorrowWasteElement.className = "badge-waste small " + getWasteTypeClass(tomorrowWaste);
-            
+
             const dayAfterWasteElement = document.getElementById("day-after-waste-type");
             dayAfterWasteElement.textContent = dayAfterWaste;
             dayAfterWasteElement.className = "badge-waste small " + getWasteTypeClass(dayAfterWaste);
         }
-        
+
         // Calendar functionality
         const calendarContainer = document.getElementById("calendar-container");
         const calendarGrid = document.getElementById("calendar-grid");
@@ -522,33 +536,33 @@
         const todayButton = document.getElementById("today-button");
         const closeCalendarButton = document.getElementById("close-calendar");
         const datePickerButton = document.getElementById("date-picker-button");
-        
+
         let currentCalendarDate = new Date();
         // Force the year to be 2025
         currentCalendarDate.setFullYear(2025);
-        
+
         // Bootstrap Modal instance
         let calendarModal;
-        
+
         // Initialize Bootstrap modal when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             calendarModal = new bootstrap.Modal(document.getElementById('calendar-container'));
         });
-        
+
         // Open calendar when date picker button is clicked
-        datePickerButton.addEventListener("click", function() {
+        datePickerButton.addEventListener("click", function () {
             currentCalendarDate = new Date(selectedDate);
             renderCalendar(currentCalendarDate);
             calendarModal.show();
         });
-        
+
         // Close calendar
-        closeCalendarButton.addEventListener("click", function() {
+        closeCalendarButton.addEventListener("click", function () {
             calendarModal.hide();
         });
-        
+
         // Navigate to previous month
-        prevMonthButton.addEventListener("click", function() {
+        prevMonthButton.addEventListener("click", function () {
             // Check if going to previous month would go before 2025
             if (currentCalendarDate.getFullYear() === 2025 && currentCalendarDate.getMonth() === 0) {
                 return; // Don't allow going before January 2025
@@ -556,9 +570,9 @@
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
             renderCalendar(currentCalendarDate);
         });
-        
+
         // Navigate to next month
-        nextMonthButton.addEventListener("click", function() {
+        nextMonthButton.addEventListener("click", function () {
             // Check if going to next month would go beyond 2025
             if (currentCalendarDate.getFullYear() === 2025 && currentCalendarDate.getMonth() === 11) {
                 return; // Don't allow going beyond December 2025
@@ -566,59 +580,59 @@
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
             renderCalendar(currentCalendarDate);
         });
-        
+
         // Go to today
-        todayButton.addEventListener("click", function() {
+        todayButton.addEventListener("click", function () {
             selectedDate = new Date();
             // Force the year to be 2025
             selectedDate.setFullYear(2025);
             updateWasteInfo(selectedDate);
             calendarModal.hide();
         });
-        
+
         // Render calendar for a given month
         function renderCalendar(date) {
             // Update month and year display
             const months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
             calendarMonthYear.textContent = `${months[date.getMonth()]} ${date.getFullYear()}`;
-            
+
             // Clear previous calendar days (except headers)
             const dayHeaders = Array.from(calendarGrid.querySelectorAll(".calendar-day-header"));
             calendarGrid.innerHTML = "";
-            
+
             // Re-add day headers
             dayHeaders.forEach(header => calendarGrid.appendChild(header));
-            
+
             // Get first day of month and total days
             const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
             const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);
             const totalDays = lastDay.getDate();
-            
+
             // Adjust for Monday as first day of week (0 = Monday, 6 = Sunday)
             let firstDayIndex = firstDay.getDay() - 1;
             if (firstDayIndex < 0) firstDayIndex = 6; // Sunday becomes 6
-            
+
             // Add empty cells for days before first day of month
             for (let i = 0; i < firstDayIndex; i++) {
                 const emptyDay = document.createElement("div");
                 emptyDay.className = "calendar-day empty";
                 calendarGrid.appendChild(emptyDay);
             }
-            
+
             // Add days of the month
             for (let day = 1; day <= totalDays; day++) {
                 const dayElement = document.createElement("div");
                 dayElement.className = "calendar-day";
                 dayElement.textContent = day;
-                
+
                 // Check if this is the selected date
                 const currentDate = new Date(date.getFullYear(), date.getMonth(), day);
-                if (currentDate.getDate() === selectedDate.getDate() && 
-                    currentDate.getMonth() === selectedDate.getMonth() && 
+                if (currentDate.getDate() === selectedDate.getDate() &&
+                    currentDate.getMonth() === selectedDate.getMonth() &&
                     currentDate.getFullYear() === selectedDate.getFullYear()) {
                     dayElement.classList.add("selected");
                 }
-                
+
                 // Add waste type indicator
                 const wasteType = wasteSchedule[date.getMonth()][day];
                 if (wasteType) {
@@ -626,88 +640,88 @@
                     indicator.className = "waste-indicator " + getWasteTypeClass(wasteType);
                     dayElement.appendChild(indicator);
                 }
-                
+
                 // Add click event to select date
-                dayElement.addEventListener("click", function() {
+                dayElement.addEventListener("click", function () {
                     selectedDate = new Date(date.getFullYear(), date.getMonth(), day);
                     updateWasteInfo(selectedDate);
                     calendarModal.hide();
                 });
-                
+
                 calendarGrid.appendChild(dayElement);
             }
         }
-        
+
         // Initialize the page
         updateWasteInfo(selectedDate);
-        
+
         // Waste Search Functionality
         const wasteTypeSelect = document.getElementById("waste-type-select");
         const searchWasteButton = document.getElementById("search-waste-button");
         const wasteSearchResults = document.getElementById("waste-search-results");
         const nextPickups = wasteSearchResults.querySelector(".next-pickups");
         const resultsMessage = wasteSearchResults.querySelector(".results-message");
-        
+
         // Function to find the next occurrences of a specific waste type
         function findNextWastePickups(wasteType, startDate, count = 3) {
             const results = [];
             const currentDate = new Date(startDate);
-            
+
             // Ensure we're looking at 2025
             currentDate.setFullYear(2025);
-            
+
             // Start from tomorrow
             currentDate.setDate(currentDate.getDate() + 1);
-            
+
             // Loop until we find the requested number of occurrences
             while (results.length < count) {
                 const month = currentDate.getMonth();
                 const day = currentDate.getDate();
-                
+
                 // Check if this day has the requested waste type
-                if (wasteSchedule[month] && 
-                    wasteSchedule[month][day] && 
+                if (wasteSchedule[month] &&
+                    wasteSchedule[month][day] &&
                     wasteSchedule[month][day] === wasteType) {
-                    
+
                     // Add to results
                     results.push(new Date(currentDate));
                 }
-                
+
                 // Move to next day
                 currentDate.setDate(currentDate.getDate() + 1);
-                
+
                 // Prevent infinite loop if we can't find enough occurrences
                 // (shouldn't happen with our data, but just in case)
                 if (currentDate.getFullYear() > 2025) {
                     break;
                 }
             }
-            
+
             return results;
         }
-        
+
         // Handle search button click
-        searchWasteButton.addEventListener("click", function() {
+        searchWasteButton.addEventListener("click", function () {
             const selectedWasteType = wasteTypeSelect.value;
             const pickupDates = findNextWastePickups(selectedWasteType, new Date());
-            
+
             if (pickupDates.length === 0) {
                 resultsMessage.textContent = "Nessun ritiro trovato per questo tipo di rifiuto.";
                 resultsMessage.style.display = "block";
                 nextPickups.style.display = "none";
                 return;
             }
-            
+
             // Update the pickup cards with the found dates
             for (let i = 0; i < pickupDates.length; i++) {
-                const dateElement = document.getElementById(`pickup-date-${i+1}`);
-                const dayElement = document.getElementById(`pickup-day-${i+1}`);
-                
+                const dateElement = document.getElementById(`pickup-date-${i + 1}`);
+                const dayElement = document.getElementById(`pickup-day-${i + 1}`);
+
                 if (dateElement && dayElement) {
                     const date = pickupDates[i];
                     dateElement.textContent = `${date.getDate()} ${["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"][date.getMonth()]}`;
                     dayElement.textContent = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"][date.getDay()];
-                    
+
                     // Add color class based on waste type
                     const parentCard = dateElement.closest('.pickup-card');
                     if (parentCard) {
@@ -718,16 +732,16 @@
                     }
                 }
             }
-            
+
             // Show the results
             resultsMessage.style.display = "none";
             nextPickups.style.display = "block";
         });
-        
+
         // PWA Installation functionality
         let deferredPrompt;
         const installButton = document.getElementById('install-button');
-        
+
         // Listen for the beforeinstallprompt event
         window.addEventListener('beforeinstallprompt', (e) => {
             // Prevent the mini-infobar from appearing on mobile
@@ -737,7 +751,7 @@
             // Show the install button
             installButton.style.display = 'flex';
         });
-        
+
         // Handle install button click
         installButton.addEventListener('click', async () => {
             if (deferredPrompt) {
@@ -751,7 +765,7 @@
                 installButton.style.display = 'none';
             }
         });
-        
+
         // Listen for the app to be installed
         window.addEventListener('appinstalled', (e) => {
             // Hide the install button
@@ -759,7 +773,7 @@
             // Clear the deferredPrompt
             deferredPrompt = null;
         });
-        
+
         // Check if app is already installed (for iOS and other platforms)
         window.addEventListener('DOMContentLoaded', () => {
             // For iOS Safari, check if running in standalone mode
@@ -769,4 +783,5 @@
         });
     </script>
 </body>
+
 </html>

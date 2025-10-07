@@ -230,10 +230,10 @@
   }
 }
 
-/* Dark mode support (if needed in future) */
+/* Dark mode support (if needed in future)
 @media (prefers-color-scheme: dark) {
   :root {
     --bs-body-bg: #1a1a1a;
     --bs-body-color: #ffffff;
   }
-}
+} */
