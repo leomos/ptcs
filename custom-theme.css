@@ -152,27 +152,188 @@
 .pickup-card.carta-cartone::before { background-color: var(--waste-carta); }
 .pickup-card.vetro-lattine::before { background-color: var(--waste-vetro); }
 
-/* Calendar Customizations */
-.calendar-day.selected {
-  background-color: var(--comune-green);
-  color: white;
+/* Calendar Grid Layout - High Specificity to Override Bootstrap */
+#calendar-container .modal-body .calendar-grid {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  gap: 5px !important;
+  padding: 15px !important;
+  max-width: 100%;
+  width: 100%;
 }
 
-.calendar-day:hover {
-  background-color: var(--comune-green-light);
+.modal-body .calendar-grid .calendar-day-header {
+  text-align: center;
+  font-weight: bold;
+  padding: 8px 5px;
+  color: var(--comune-green);
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
 }
 
-.calendar-nav .btn,
-.calendar-footer .btn {
-  background-color: var(--comune-green);
-  border-color: var(--comune-green);
-  color: white;
+.modal-body .calendar-grid .calendar-day {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+  min-height: 45px;
+  font-weight: 500;
+  padding: 5px;
 }
 
-.calendar-nav .btn:hover,
-.calendar-footer .btn:hover {
-  background-color: var(--comune-green-hover);
-  border-color: var(--comune-green-hover);
+.modal-body .calendar-grid .calendar-day.empty {
+  border: none !important;
+  cursor: default !important;
+  background: transparent !important;
+  visibility: hidden;
+}
+
+.modal-body .calendar-grid .calendar-day:not(.empty):hover {
+  background-color: var(--comune-green-light) !important;
+  border-color: var(--comune-green) !important;
+  transform: scale(1.05);
+}
+
+.modal-body .calendar-grid .calendar-day.selected {
+  background-color: var(--comune-green) !important;
+  color: white !important;
+  border-color: var(--comune-green-dark) !important;
+  transform: scale(1.02);
+}
+
+.modal-body .calendar-grid .calendar-day.selected:hover {
+  background-color: var(--comune-green-hover) !important;
+}
+
+/* Waste Type Indicators on Calendar Days */
+.calendar-day .waste-indicator {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 4px;
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.waste-indicator.organico { background-color: var(--waste-organico); }
+.waste-indicator.secco-residuale { background-color: var(--waste-secco); }
+.waste-indicator.plastica { background-color: var(--waste-plastica); }
+.waste-indicator.carta-cartone { background-color: var(--waste-carta); }
+.waste-indicator.vetro-lattine { background-color: var(--waste-vetro); }
+.waste-indicator.nessuna-raccolta { background-color: var(--waste-nessuna); }
+
+/* Calendar Modal Customizations */
+#calendar-container .modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid var(--comune-green);
+}
+
+#calendar-container .modal-title {
+  color: var(--comune-green);
+  font-weight: bold;
+}
+
+/* Calendar Navigation Buttons */
+#calendar-container .btn-primary {
+  background-color: var(--comune-green) !important;
+  border-color: var(--comune-green) !important;
+  color: white !important;
+}
+
+#calendar-container .btn-primary:hover {
+  background-color: var(--comune-green-hover) !important;
+  border-color: var(--comune-green-hover) !important;
+}
+
+/* Responsive Calendar */
+@media (max-width: 768px) {
+  #calendar-container .modal-dialog {
+    margin: 1rem;
+    max-width: calc(100vw - 2rem) !important;
+  }
+  
+  #calendar-container .modal-body {
+    padding: 0.75rem !important;
+  }
+  
+  #calendar-container .modal-body .calendar-grid {
+    gap: 1px !important;
+    padding: 5px !important;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .modal-body .calendar-grid .calendar-day {
+    min-height: 32px !important;
+    font-size: 0.85rem !important;
+    padding: 2px !important;
+  }
+  
+  .modal-body .calendar-grid .calendar-day-header {
+    font-size: 0.75rem !important;
+    padding: 4px 2px !important;
+    margin-bottom: 2px;
+  }
+  
+  .calendar-day .waste-indicator {
+    width: 16px !important;
+    height: 3px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #calendar-container .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100vw - 1rem) !important;
+  }
+  
+  #calendar-container .modal-body {
+    padding: 0.5rem !important;
+  }
+  
+  #calendar-container .modal-body .calendar-grid {
+    gap: 1px !important;
+    padding: 3px !important;
+  }
+  
+  .modal-body .calendar-grid .calendar-day {
+    min-height: 28px !important;
+    font-size: 0.8rem !important;
+    padding: 1px !important;
+  }
+  
+  .modal-body .calendar-grid .calendar-day-header {
+    font-size: 0.7rem !important;
+    padding: 3px 1px !important;
+  }
+  
+  .calendar-day .waste-indicator {
+    width: 14px !important;
+    height: 2px !important;
+    bottom: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-body .calendar-grid .calendar-day {
+    min-height: 26px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  .modal-body .calendar-grid .calendar-day-header {
+    font-size: 0.65rem !important;
+    padding: 2px 1px !important;
+  }
 }
 
 /* Install Button Customizations */
