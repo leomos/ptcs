@@ -274,193 +274,504 @@
 
     <script>
         bootstrap.loadFonts('/bootstrap-italia/fonts');
-        // Waste schedule data for 2025
+        // Waste schedule data - format: YYYY-MM-DD
         const wasteSchedule = {
-            // Month indexes are 0-based (0 = January, 11 = December)
-            0: { // January
-                1: "Nessuna Raccolta", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA",
-                5: "Nessuna Raccolta", // Sunday
-                6: "Nessuna Raccolta", 7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "CARTA E CARTONE", 10: "ORGANICO",
-                11: "PLASTICA",
-                12: "Nessuna Raccolta", // Sunday
-                13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "VETRO E LATTINE",
-                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA",
-                19: "Nessuna Raccolta", // Sunday
-                20: "ORGANICO",
-                21: "SECCO RESIDUALE", 22: "CARTA E CARTONE", 23: "ORGANICO", 24: "ORGANICO", 25: "PLASTICA",
-                26: "Nessuna Raccolta", // Sunday
-                27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "VETRO E LATTINE", 30: "CARTA E CARTONE", 31: "ORGANICO"
-            },
-            1: { // February
-                1: "PLASTICA",
-                2: "Nessuna Raccolta", // Sunday
-                3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE",
-                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA",
-                9: "Nessuna Raccolta", // Sunday
-                10: "ORGANICO",
-                11: "SECCO RESIDUALE", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 15: "PLASTICA",
-                16: "Nessuna Raccolta", // Sunday
-                17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE",
-                21: "ORGANICO", 22: "PLASTICA",
-                23: "Nessuna Raccolta", // Sunday
-                24: "ORGANICO", 25: "SECCO RESIDUALE",
-                26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO"
-            },
-            2: { // March
-                1: "PLASTICA",
-                2: "Nessuna Raccolta", // Sunday
-                3: "ORGANICO", 4: "SECCO RESIDUALE", 5: "VETRO E LATTINE",
-                6: "CARTA E CARTONE", 7: "ORGANICO", 8: "PLASTICA",
-                9: "Nessuna Raccolta", // Sunday
-                10: "ORGANICO",
-                11: "SECCO RESIDUO", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO", 15: "PLASTICA",
-                16: "Nessuna Raccolta", // Sunday
-                17: "ORGANICO", 18: "SECCO RESIDUO", 19: "VETRO E LATTINE", 20: "CARTA E CARTONE",
-                21: "ORGANICO", 22: "PLASTICA",
-                23: "Nessuna Raccolta", // Sunday
-                24: "ORGANICO", 25: "SECCO RESIDUO",
-                26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO", 29: "PLASTICA",
-                30: "Nessuna Raccolta", // Sunday
-                31: "ORGANICO"
-            },
-            3: { // April
-                1: "SECCO RESIDUALE", 2: "VETRO E LATTINE", 3: "CARTA E CARTONE", 4: "ORGANICO", 5: "PLASTICA",
-                6: "Nessuna Raccolta", // Sunday
-                7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "VETRO E LATTINE", 10: "CARTA E CARTONE",
-                11: "ORGANICO", 12: "PLASTICA",
-                13: "Nessuna Raccolta", // Sunday
-                14: "ORGANICO", 15: "SECCO RESIDUALE",
-                16: "VETRO E LATTINE", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA",
-                20: "Nessuna Raccolta", // Sunday
-                21: "Nessuna Raccolta", 22: "ORGANICO", 23: "CARTA E CARTONE", 24: "ORGANICO", 25: "Nessuna Raccolta",
-                26: "PLASTICA", // Sunday
-                27: "Nessuna Raccolta", 28: "SECCO RESIDUALE", 29: "VETRO E LATTINE", 30: "ORGANICO"
-            },
-            4: { // May
-                1: "Nessuna Raccolta", 2: "ORGANICO", 3: "PLASTICA",
-                4: "Nessuna Raccolta", // Sunday
-                5: "ORGANICO", 6: "SECCO RESIDUALE",
-                7: "VETRO E LATTINE", 8: "CARTA E CARTONE", 9: "ORGANICO", 10: "PLASTICA",
-                11: "Nessuna Raccolta", // Sunday
-                12: "ORGANICO", 13: "SECCO RESIDUALE", 14: "VETRO E LATTINE", 15: "CARTA E CARTONE",
-                16: "ORGANICO", 17: "PLASTICA",
-                18: "Nessuna Raccolta", // Sunday
-                19: "ORGANICO", 20: "SECCO RESIDUALE",
-                21: "VETRO E LATTINE", 22: "CARTA E CARTONE", 23: "ORGANICO", 24: "PLASTICA",
-                25: "Nessuna Raccolta", // Sunday
-                26: "ORGANICO", 27: "SECCO RESIDUALE", 28: "VETRO E LATTINE", 29: "CARTA E CARTONE",
-                30: "ORGANICO", 31: "PLASTICA"
-            },
-            5: { // June
-                1: "Nessuna Raccolta", // Sunday
-                2: "Nessuna Raccolta", 3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE",
-                6: "ORGANICO", 7: "PLASTICA",
-                8: "Nessuna Raccolta", // Sunday
-                9: "ORGANICO", 10: "SECCO RESIDUALE",
-                11: "VETRO E LATTINE", 12: "CARTA E CARTONE", 13: "ORGANICO", 14: "PLASTICA",
-                15: "Nessuna Raccolta", // Sunday
-                16: "ORGANICO", 17: "VETRO E LATTINE", 18: "ORGANICO", 19: "CARTA E CARTONE", 20: "ORGANICO",
-                21: "PLASTICA",
-                22: "Nessuna Raccolta", // Sunday
-                23: "ORGANICO", 24: "SECCO RESIDUALE", 25: "ORGANICO",
-                26: "CARTA E CARTONE", 27: "ORGANICO", 28: "PLASTICA",
-                29: "Nessuna Raccolta", // Sunday
-                30: "ORGANICO"
-            },
-            6: { // July
-                1: "VETRO E LATTINE", 2: "ORGANICO", 3: "CARTA E CARTONE", 4: "ORGANICO", 5: "PLASTICA",
-                6: "Nessuna Raccolta", // Sunday
-                7: "ORGANICO", 8: "SECCO RESIDUALE", 9: "ORGANICO", 10: "CARTA E CARTONE",
-                11: "ORGANICO", 12: "PLASTICA",
-                13: "Nessuna Raccolta", // Sunday
-                14: "ORGANICO", 15: "VETRO E LATTINE",
-                16: "ORGANICO", 17: "CARTA E CARTONE", 18: "ORGANICO", 19: "PLASTICA",
-                20: "Nessuna Raccolta", // Sunday
-                21: "ORGANICO", 22: "SECCO RESIDUALE", 23: "ORGANICO", 24: "CARTA E CARTONE", 25: "ORGANICO",
-                26: "PLASTICA",
-                27: "Nessuna Raccolta", // Sunday
-                28: "ORGANICO", 29: "VETRO E LATTINE", 30: "ORGANICO", 31: "CARTA E CARTONE"
-            },
-            7: { // August
-                1: "ORGANICO", 2: "PLASTICA",
-                3: "Nessuna Raccolta", // Sunday
-                4: "ORGANICO", 5: "SECCO RESIDUALE",
-                6: "ORGANICO", 7: "CARTA E CARTONE", 8: "ORGANICO", 9: "PLASTICA",
-                10: "Nessuna Raccolta", // Sunday
-                11: "ORGANICO", 12: "VETRO E LATTINE", 13: "ORGANICO", 14: "CARTA E CARTONE", 15: "Nessuna Raccolta",
-                16: "PLASTICA",
-                17: "Nessuna Raccolta", // Sunday
-                18: "ORGANICO", 19: "SECCO RESIDUALE", 20: "ORGANICO",
-                21: "CARTA E CARTONE", 22: "ORGANICO", 23: "PLASTICA",
-                24: "Nessuna Raccolta", // Sunday
-                25: "ORGANICO",
-                26: "VETRO E LATTINE", 27: "ORGANICO", 28: "CARTA E CARTONE", 29: "ORGANICO", 30: "PLASTICA",
-                31: "Nessuna Raccolta" // Sunday
-            },
-            8: { // September
-                1: "ORGANICO", 2: "SECCO RESIDUALE", 3: "ORGANICO", 4: "CARTA E CARTONE", 5: "ORGANICO",
-                6: "PLASTICA",
-                7: "Nessuna Raccolta", // Sunday
-                8: "ORGANICO", 9: "VETRO E LATTINE", 10: "ORGANICO",
-                11: "CARTA E CARTONE", 12: "ORGANICO", 13: "PLASTICA",
-                14: "Nessuna Raccolta", // Sunday
-                15: "ORGANICO",
-                16: "SECCO RESIDUALE", 17: "ORGANICO", 18: "CARTA E CARTONE", 19: "ORGANICO", 20: "PLASTICA",
-                21: "Nessuna Raccolta", // Sunday
-                22: "ORGANICO", 23: "VETRO E LATTINE", 24: "ORGANICO", 25: "CARTA E CARTONE",
-                26: "ORGANICO", 27: "PLASTICA",
-                28: "Nessuna Raccolta", // Sunday
-                29: "ORGANICO", 30: "SECCO RESIDUALE"
-            },
-            9: { // October
-                1: "ORGANICO", 2: "CARTA E CARTONE", 3: "ORGANICO", 4: "PLASTICA",
-                5: "Nessuna Raccolta", // Sunday
-                6: "ORGANICO", 7: "VETRO E LATTINE", 8: "ORGANICO", 9: "CARTA E CARTONE", 10: "ORGANICO",
-                11: "PLASTICA",
-                12: "Nessuna Raccolta", // Sunday
-                13: "ORGANICO", 14: "SECCO RESIDUALE", 15: "ORGANICO",
-                16: "CARTA E CARTONE", 17: "ORGANICO", 18: "PLASTICA",
-                19: "Nessuna Raccolta", // Sunday
-                20: "ORGANICO",
-                21: "VETRO E LATTINE", 22: "ORGANICO", 23: "CARTA E CARTONE", 24: "ORGANICO", 25: "PLASTICA",
-                26: "Nessuna Raccolta", // Sunday
-                27: "ORGANICO", 28: "SECCO RESIDUALE", 29: "CARTA E CARTONE", 30: "ORGANICO", 31: "PLASTICA"
-            },
-            10: { // November
-                1: "Nessuna Raccolta",
-                2: "Nessuna Raccolta", // Sunday
-                3: "ORGANICO", 4: "VETRO E LATTINE", 5: "CARTA E CARTONE",
-                6: "Nessuna Raccolta", 7: "ORGANICO", 8: "PLASTICA",
-                9: "Nessuna Raccolta", // Sunday
-                10: "ORGANICO",
-                11: "SECCO RESIDUALE", 12: "VETRO E LATTINE", 13: "CARTA E CARTONE", 14: "ORGANICO",
-                15: "PLASTICA",
-                16: "Nessuna Raccolta", // Sunday
-                17: "ORGANICO", 18: "SECCO RESIDUALE", 19: "VETRO E LATTINE",
-                20: "CARTA E CARTONE", 21: "ORGANICO", 22: "PLASTICA",
-                23: "Nessuna Raccolta", // Sunday
-                24: "ORGANICO",
-                25: "SECCO RESIDUALE", 26: "VETRO E LATTINE", 27: "CARTA E CARTONE", 28: "ORGANICO",
-                29: "PLASTICA",
-                30: "Nessuna Raccolta" // Sunday
-            },
-            11: { // December
-                1: "ORGANICO", 2: "SECCO RESIDUALE", 3: "VETRO E LATTINE", 4: "CARTA E CARTONE",
-                5: "ORGANICO", 6: "PLASTICA",
-                7: "Nessuna Raccolta", // Sunday
-                8: "Nessuna Raccolta", 9: "ORGANICO",
-                10: "VETRO E LATTINE", 11: "CARTA E CARTONE", 12: "ORGANICO", 13: "PLASTICA",
-                14: "Nessuna Raccolta", // Sunday
-                15: "ORGANICO", 16: "SECCO RESIDUALE", 17: "CARTA E CARTONE",
-                18: "ORGANICO", 19: "ORGANICO", 20: "PLASTICA",
-                21: "Nessuna Raccolta", // Sunday
-                22: "ORGANICO",
-                23: "SECCO RESIDUALE", 24: "CARTA E CARTONE", 25: "Nessuna Raccolta", 26: "Nessuna Raccolta",
-                27: "PLASTICA",
-                28: "Nessuna Raccolta", // Sunday
-                29: "ORGANICO", 30: "VETRO E LATTINE", 31: "CARTA E CARTONE"
-            }
+            // January 2025
+            "2025-01-01": "Nessuna Raccolta",
+            "2025-01-02": "CARTA E CARTONE",
+            "2025-01-03": "ORGANICO",
+            "2025-01-04": "PLASTICA",
+            "2025-01-05": "Nessuna Raccolta",
+            "2025-01-06": "Nessuna Raccolta",
+            "2025-01-07": "ORGANICO",
+            "2025-01-08": "SECCO RESIDUALE",
+            "2025-01-09": "CARTA E CARTONE",
+            "2025-01-10": "ORGANICO",
+            "2025-01-11": "PLASTICA",
+            "2025-01-12": "Nessuna Raccolta",
+            "2025-01-13": "ORGANICO",
+            "2025-01-14": "SECCO RESIDUALE",
+            "2025-01-15": "VETRO E LATTINE",
+            "2025-01-16": "CARTA E CARTONE",
+            "2025-01-17": "ORGANICO",
+            "2025-01-18": "PLASTICA",
+            "2025-01-19": "Nessuna Raccolta",
+            "2025-01-20": "ORGANICO",
+            "2025-01-21": "SECCO RESIDUALE",
+            "2025-01-22": "CARTA E CARTONE",
+            "2025-01-23": "ORGANICO",
+            "2025-01-24": "ORGANICO",
+            "2025-01-25": "PLASTICA",
+            "2025-01-26": "Nessuna Raccolta",
+            "2025-01-27": "ORGANICO",
+            "2025-01-28": "SECCO RESIDUALE",
+            "2025-01-29": "VETRO E LATTINE",
+            "2025-01-30": "CARTA E CARTONE",
+            "2025-01-31": "ORGANICO",
+            // February 2025
+            "2025-02-01": "PLASTICA",
+            "2025-02-02": "Nessuna Raccolta",
+            "2025-02-03": "ORGANICO",
+            "2025-02-04": "SECCO RESIDUALE",
+            "2025-02-05": "VETRO E LATTINE",
+            "2025-02-06": "CARTA E CARTONE",
+            "2025-02-07": "ORGANICO",
+            "2025-02-08": "PLASTICA",
+            "2025-02-09": "Nessuna Raccolta",
+            "2025-02-10": "ORGANICO",
+            "2025-02-11": "SECCO RESIDUALE",
+            "2025-02-12": "VETRO E LATTINE",
+            "2025-02-13": "CARTA E CARTONE",
+            "2025-02-14": "ORGANICO",
+            "2025-02-15": "PLASTICA",
+            "2025-02-16": "Nessuna Raccolta",
+            "2025-02-17": "ORGANICO",
+            "2025-02-18": "SECCO RESIDUALE",
+            "2025-02-19": "VETRO E LATTINE",
+            "2025-02-20": "CARTA E CARTONE",
+            "2025-02-21": "ORGANICO",
+            "2025-02-22": "PLASTICA",
+            "2025-02-23": "Nessuna Raccolta",
+            "2025-02-24": "ORGANICO",
+            "2025-02-25": "SECCO RESIDUALE",
+            "2025-02-26": "VETRO E LATTINE",
+            "2025-02-27": "CARTA E CARTONE",
+            "2025-02-28": "ORGANICO",
+            // March 2025
+            "2025-03-01": "PLASTICA",
+            "2025-03-02": "Nessuna Raccolta",
+            "2025-03-03": "ORGANICO",
+            "2025-03-04": "SECCO RESIDUO",
+            "2025-03-05": "VETRO E LATTINE",
+            "2025-03-06": "CARTA E CARTONE",
+            "2025-03-07": "ORGANICO",
+            "2025-03-08": "PLASTICA",
+            "2025-03-09": "Nessuna Raccolta",
+            "2025-03-10": "ORGANICO",
+            "2025-03-11": "SECCO RESIDUO",
+            "2025-03-12": "VETRO E LATTINE",
+            "2025-03-13": "CARTA E CARTONE",
+            "2025-03-14": "ORGANICO",
+            "2025-03-15": "PLASTICA",
+            "2025-03-16": "Nessuna Raccolta",
+            "2025-03-17": "ORGANICO",
+            "2025-03-18": "SECCO RESIDUO",
+            "2025-03-19": "VETRO E LATTINE",
+            "2025-03-20": "CARTA E CARTONE",
+            "2025-03-21": "ORGANICO",
+            "2025-03-22": "PLASTICA",
+            "2025-03-23": "Nessuna Raccolta",
+            "2025-03-24": "ORGANICO",
+            "2025-03-25": "SECCO RESIDUO",
+            "2025-03-26": "VETRO E LATTINE",
+            "2025-03-27": "CARTA E CARTONE",
+            "2025-03-28": "ORGANICO",
+            "2025-03-29": "PLASTICA",
+            "2025-03-30": "Nessuna Raccolta",
+            "2025-03-31": "ORGANICO",
+            // April 2025
+            "2025-04-01": "SECCO RESIDUALE",
+            "2025-04-02": "VETRO E LATTINE",
+            "2025-04-03": "CARTA E CARTONE",
+            "2025-04-04": "ORGANICO",
+            "2025-04-05": "PLASTICA",
+            "2025-04-06": "Nessuna Raccolta",
+            "2025-04-07": "ORGANICO",
+            "2025-04-08": "SECCO RESIDUALE",
+            "2025-04-09": "VETRO E LATTINE",
+            "2025-04-10": "CARTA E CARTONE",
+            "2025-04-11": "ORGANICO",
+            "2025-04-12": "PLASTICA",
+            "2025-04-13": "Nessuna Raccolta",
+            "2025-04-14": "ORGANICO",
+            "2025-04-15": "SECCO RESIDUALE",
+            "2025-04-16": "VETRO E LATTINE",
+            "2025-04-17": "CARTA E CARTONE",
+            "2025-04-18": "ORGANICO",
+            "2025-04-19": "PLASTICA",
+            "2025-04-20": "Nessuna Raccolta",
+            "2025-04-21": "Nessuna Raccolta",
+            "2025-04-22": "ORGANICO",
+            "2025-04-23": "CARTA E CARTONE",
+            "2025-04-24": "ORGANICO",
+            "2025-04-25": "Nessuna Raccolta",
+            "2025-04-26": "PLASTICA",
+            "2025-04-27": "Nessuna Raccolta",
+            "2025-04-28": "SECCO RESIDUALE",
+            "2025-04-29": "VETRO E LATTINE",
+            "2025-04-30": "ORGANICO",
+            // May 2025
+            "2025-05-01": "Nessuna Raccolta",
+            "2025-05-02": "ORGANICO",
+            "2025-05-03": "PLASTICA",
+            "2025-05-04": "Nessuna Raccolta",
+            "2025-05-05": "ORGANICO",
+            "2025-05-06": "SECCO RESIDUALE",
+            "2025-05-07": "VETRO E LATTINE",
+            "2025-05-08": "CARTA E CARTONE",
+            "2025-05-09": "ORGANICO",
+            "2025-05-10": "PLASTICA",
+            "2025-05-11": "Nessuna Raccolta",
+            "2025-05-12": "ORGANICO",
+            "2025-05-13": "SECCO RESIDUALE",
+            "2025-05-14": "VETRO E LATTINE",
+            "2025-05-15": "CARTA E CARTONE",
+            "2025-05-16": "ORGANICO",
+            "2025-05-17": "PLASTICA",
+            "2025-05-18": "Nessuna Raccolta",
+            "2025-05-19": "ORGANICO",
+            "2025-05-20": "SECCO RESIDUALE",
+            "2025-05-21": "VETRO E LATTINE",
+            "2025-05-22": "CARTA E CARTONE",
+            "2025-05-23": "ORGANICO",
+            "2025-05-24": "PLASTICA",
+            "2025-05-25": "Nessuna Raccolta",
+            "2025-05-26": "ORGANICO",
+            "2025-05-27": "SECCO RESIDUALE",
+            "2025-05-28": "VETRO E LATTINE",
+            "2025-05-29": "CARTA E CARTONE",
+            "2025-05-30": "ORGANICO",
+            "2025-05-31": "PLASTICA",
+            // June 2025
+            "2025-06-01": "Nessuna Raccolta",
+            "2025-06-02": "Nessuna Raccolta",
+            "2025-06-03": "ORGANICO",
+            "2025-06-04": "VETRO E LATTINE",
+            "2025-06-05": "CARTA E CARTONE",
+            "2025-06-06": "ORGANICO",
+            "2025-06-07": "PLASTICA",
+            "2025-06-08": "Nessuna Raccolta",
+            "2025-06-09": "ORGANICO",
+            "2025-06-10": "SECCO RESIDUALE",
+            "2025-06-11": "VETRO E LATTINE",
+            "2025-06-12": "CARTA E CARTONE",
+            "2025-06-13": "ORGANICO",
+            "2025-06-14": "PLASTICA",
+            "2025-06-15": "Nessuna Raccolta",
+            "2025-06-16": "ORGANICO",
+            "2025-06-17": "VETRO E LATTINE",
+            "2025-06-18": "ORGANICO",
+            "2025-06-19": "CARTA E CARTONE",
+            "2025-06-20": "ORGANICO",
+            "2025-06-21": "PLASTICA",
+            "2025-06-22": "Nessuna Raccolta",
+            "2025-06-23": "ORGANICO",
+            "2025-06-24": "SECCO RESIDUALE",
+            "2025-06-25": "ORGANICO",
+            "2025-06-26": "CARTA E CARTONE",
+            "2025-06-27": "ORGANICO",
+            "2025-06-28": "PLASTICA",
+            "2025-06-29": "Nessuna Raccolta",
+            "2025-06-30": "ORGANICO",
+            // July 2025
+            "2025-07-01": "VETRO E LATTINE",
+            "2025-07-02": "ORGANICO",
+            "2025-07-03": "CARTA E CARTONE",
+            "2025-07-04": "ORGANICO",
+            "2025-07-05": "PLASTICA",
+            "2025-07-06": "Nessuna Raccolta",
+            "2025-07-07": "ORGANICO",
+            "2025-07-08": "SECCO RESIDUALE",
+            "2025-07-09": "ORGANICO",
+            "2025-07-10": "CARTA E CARTONE",
+            "2025-07-11": "ORGANICO",
+            "2025-07-12": "PLASTICA",
+            "2025-07-13": "Nessuna Raccolta",
+            "2025-07-14": "ORGANICO",
+            "2025-07-15": "VETRO E LATTINE",
+            "2025-07-16": "ORGANICO",
+            "2025-07-17": "CARTA E CARTONE",
+            "2025-07-18": "ORGANICO",
+            "2025-07-19": "PLASTICA",
+            "2025-07-20": "Nessuna Raccolta",
+            "2025-07-21": "ORGANICO",
+            "2025-07-22": "SECCO RESIDUALE",
+            "2025-07-23": "ORGANICO",
+            "2025-07-24": "CARTA E CARTONE",
+            "2025-07-25": "ORGANICO",
+            "2025-07-26": "PLASTICA",
+            "2025-07-27": "Nessuna Raccolta",
+            "2025-07-28": "ORGANICO",
+            "2025-07-29": "VETRO E LATTINE",
+            "2025-07-30": "ORGANICO",
+            "2025-07-31": "CARTA E CARTONE",
+            // August 2025
+            "2025-08-01": "ORGANICO",
+            "2025-08-02": "PLASTICA",
+            "2025-08-03": "Nessuna Raccolta",
+            "2025-08-04": "ORGANICO",
+            "2025-08-05": "SECCO RESIDUALE",
+            "2025-08-06": "ORGANICO",
+            "2025-08-07": "CARTA E CARTONE",
+            "2025-08-08": "ORGANICO",
+            "2025-08-09": "PLASTICA",
+            "2025-08-10": "Nessuna Raccolta",
+            "2025-08-11": "ORGANICO",
+            "2025-08-12": "VETRO E LATTINE",
+            "2025-08-13": "ORGANICO",
+            "2025-08-14": "CARTA E CARTONE",
+            "2025-08-15": "Nessuna Raccolta",
+            "2025-08-16": "PLASTICA",
+            "2025-08-17": "Nessuna Raccolta",
+            "2025-08-18": "ORGANICO",
+            "2025-08-19": "SECCO RESIDUALE",
+            "2025-08-20": "ORGANICO",
+            "2025-08-21": "CARTA E CARTONE",
+            "2025-08-22": "ORGANICO",
+            "2025-08-23": "PLASTICA",
+            "2025-08-24": "Nessuna Raccolta",
+            "2025-08-25": "ORGANICO",
+            "2025-08-26": "VETRO E LATTINE",
+            "2025-08-27": "ORGANICO",
+            "2025-08-28": "CARTA E CARTONE",
+            "2025-08-29": "ORGANICO",
+            "2025-08-30": "PLASTICA",
+            "2025-08-31": "Nessuna Raccolta",
+            // September 2025
+            "2025-09-01": "ORGANICO",
+            "2025-09-02": "SECCO RESIDUALE",
+            "2025-09-03": "ORGANICO",
+            "2025-09-04": "CARTA E CARTONE",
+            "2025-09-05": "ORGANICO",
+            "2025-09-06": "PLASTICA",
+            "2025-09-07": "Nessuna Raccolta",
+            "2025-09-08": "ORGANICO",
+            "2025-09-09": "VETRO E LATTINE",
+            "2025-09-10": "ORGANICO",
+            "2025-09-11": "CARTA E CARTONE",
+            "2025-09-12": "ORGANICO",
+            "2025-09-13": "PLASTICA",
+            "2025-09-14": "Nessuna Raccolta",
+            "2025-09-15": "ORGANICO",
+            "2025-09-16": "SECCO RESIDUALE",
+            "2025-09-17": "ORGANICO",
+            "2025-09-18": "CARTA E CARTONE",
+            "2025-09-19": "ORGANICO",
+            "2025-09-20": "PLASTICA",
+            "2025-09-21": "Nessuna Raccolta",
+            "2025-09-22": "ORGANICO",
+            "2025-09-23": "VETRO E LATTINE",
+            "2025-09-24": "ORGANICO",
+            "2025-09-25": "CARTA E CARTONE",
+            "2025-09-26": "ORGANICO",
+            "2025-09-27": "PLASTICA",
+            "2025-09-28": "Nessuna Raccolta",
+            "2025-09-29": "ORGANICO",
+            "2025-09-30": "SECCO RESIDUALE",
+            // October 2025
+            "2025-10-01": "ORGANICO",
+            "2025-10-02": "CARTA E CARTONE",
+            "2025-10-03": "ORGANICO",
+            "2025-10-04": "PLASTICA",
+            "2025-10-05": "Nessuna Raccolta",
+            "2025-10-06": "ORGANICO",
+            "2025-10-07": "VETRO E LATTINE",
+            "2025-10-08": "ORGANICO",
+            "2025-10-09": "CARTA E CARTONE",
+            "2025-10-10": "ORGANICO",
+            "2025-10-11": "PLASTICA",
+            "2025-10-12": "Nessuna Raccolta",
+            "2025-10-13": "ORGANICO",
+            "2025-10-14": "SECCO RESIDUALE",
+            "2025-10-15": "ORGANICO",
+            "2025-10-16": "CARTA E CARTONE",
+            "2025-10-17": "ORGANICO",
+            "2025-10-18": "PLASTICA",
+            "2025-10-19": "Nessuna Raccolta",
+            "2025-10-20": "ORGANICO",
+            "2025-10-21": "VETRO E LATTINE",
+            "2025-10-22": "ORGANICO",
+            "2025-10-23": "CARTA E CARTONE",
+            "2025-10-24": "ORGANICO",
+            "2025-10-25": "PLASTICA",
+            "2025-10-26": "Nessuna Raccolta",
+            "2025-10-27": "ORGANICO",
+            "2025-10-28": "SECCO RESIDUALE",
+            "2025-10-29": "CARTA E CARTONE",
+            "2025-10-30": "ORGANICO",
+            "2025-10-31": "PLASTICA",
+            // November 2025
+            "2025-11-01": "Nessuna Raccolta",
+            "2025-11-02": "Nessuna Raccolta",
+            "2025-11-03": "ORGANICO",
+            "2025-11-04": "VETRO E LATTINE",
+            "2025-11-05": "CARTA E CARTONE",
+            "2025-11-06": "Nessuna Raccolta",
+            "2025-11-07": "ORGANICO",
+            "2025-11-08": "PLASTICA",
+            "2025-11-09": "Nessuna Raccolta",
+            "2025-11-10": "ORGANICO",
+            "2025-11-11": "SECCO RESIDUALE",
+            "2025-11-12": "VETRO E LATTINE",
+            "2025-11-13": "CARTA E CARTONE",
+            "2025-11-14": "ORGANICO",
+            "2025-11-15": "PLASTICA",
+            "2025-11-16": "Nessuna Raccolta",
+            "2025-11-17": "ORGANICO",
+            "2025-11-18": "SECCO RESIDUALE",
+            "2025-11-19": "VETRO E LATTINE",
+            "2025-11-20": "CARTA E CARTONE",
+            "2025-11-21": "ORGANICO",
+            "2025-11-22": "PLASTICA",
+            "2025-11-23": "Nessuna Raccolta",
+            "2025-11-24": "ORGANICO",
+            "2025-11-25": "SECCO RESIDUALE",
+            "2025-11-26": "VETRO E LATTINE",
+            "2025-11-27": "CARTA E CARTONE",
+            "2025-11-28": "ORGANICO",
+            "2025-11-29": "PLASTICA",
+            "2025-11-30": "Nessuna Raccolta",
+            // December 2025
+            "2025-12-01": "ORGANICO",
+            "2025-12-02": "SECCO RESIDUALE",
+            "2025-12-03": "VETRO E LATTINE",
+            "2025-12-04": "CARTA E CARTONE",
+            "2025-12-05": "ORGANICO",
+            "2025-12-06": "PLASTICA",
+            "2025-12-07": "Nessuna Raccolta",
+            "2025-12-08": "Nessuna Raccolta",
+            "2025-12-09": "ORGANICO",
+            "2025-12-10": "VETRO E LATTINE",
+            "2025-12-11": "CARTA E CARTONE",
+            "2025-12-12": "ORGANICO",
+            "2025-12-13": "PLASTICA",
+            "2025-12-14": "Nessuna Raccolta",
+            "2025-12-15": "ORGANICO",
+            "2025-12-16": "SECCO RESIDUALE",
+            "2025-12-17": "CARTA E CARTONE",
+            "2025-12-18": "ORGANICO",
+            "2025-12-19": "ORGANICO",
+            "2025-12-20": "PLASTICA",
+            "2025-12-21": "Nessuna Raccolta",
+            "2025-12-22": "ORGANICO",
+            "2025-12-23": "SECCO RESIDUALE",
+            "2025-12-24": "CARTA E CARTONE",
+            "2025-12-25": "Nessuna Raccolta",
+            "2025-12-26": "Nessuna Raccolta",
+            "2025-12-27": "PLASTICA",
+            "2025-12-28": "Nessuna Raccolta",
+            "2025-12-29": "ORGANICO",
+            "2025-12-30": "VETRO E LATTINE",
+            "2025-12-31": "CARTA E CARTONE",
+            // January 2026
+            "2026-01-01": "Nessuna Raccolta",
+            "2026-01-02": "ORGANICO",
+            "2026-01-03": "PLASTICA",
+            "2026-01-04": "Nessuna Raccolta",
+            "2026-01-05": "ORGANICO",
+            "2026-01-06": "Nessuna Raccolta",
+            "2026-01-07": "SECCO RESIDUALE",
+            "2026-01-08": "CARTA E CARTONE",
+            "2026-01-09": "ORGANICO",
+            "2026-01-10": "PLASTICA",
+            "2026-01-11": "Nessuna Raccolta",
+            "2026-01-12": "ORGANICO",
+            "2026-01-13": "SECCO RESIDUALE",
+            "2026-01-14": "VETRO E LATTINE",
+            "2026-01-15": "CARTA E CARTONE",
+            "2026-01-16": "ORGANICO",
+            "2026-01-17": "PLASTICA",
+            "2026-01-18": "Nessuna Raccolta",
+            "2026-01-19": "ORGANICO",
+            "2026-01-20": "SECCO RESIDUALE",
+            "2026-01-21": "VETRO E LATTINE",
+            "2026-01-22": "CARTA E CARTONE",
+            "2026-01-23": "ORGANICO",
+            "2026-01-24": "PLASTICA",
+            "2026-01-25": "Nessuna Raccolta",
+            "2026-01-26": "ORGANICO",
+            "2026-01-27": "SECCO RESIDUALE",
+            "2026-01-28": "VETRO E LATTINE",
+            "2026-01-29": "CARTA E CARTONE",
+            "2026-01-30": "ORGANICO",
+            "2026-01-31": "PLASTICA",
+            // February 2026
+            "2026-02-01": "Nessuna Raccolta",
+            "2026-02-02": "ORGANICO",
+            "2026-02-03": "PLASTICA",
+            "2026-02-04": "VETRO E LATTINE",
+            "2026-02-05": "CARTA E CARTONE",
+            "2026-02-06": "ORGANICO",
+            "2026-02-07": "PLASTICA",
+            "2026-02-08": "Nessuna Raccolta",
+            "2026-02-09": "ORGANICO",
+            "2026-02-10": "SECCO RESIDUALE",
+            "2026-02-11": "VETRO E LATTINE",
+            "2026-02-12": "CARTA E CARTONE",
+            "2026-02-13": "ORGANICO",
+            "2026-02-14": "PLASTICA",
+            "2026-02-15": "Nessuna Raccolta",
+            "2026-02-16": "ORGANICO",
+            "2026-02-17": "SECCO RESIDUALE",
+            "2026-02-18": "VETRO E LATTINE",
+            "2026-02-19": "CARTA E CARTONE",
+            "2026-02-20": "ORGANICO",
+            "2026-02-21": "PLASTICA",
+            "2026-02-22": "Nessuna Raccolta",
+            "2026-02-23": "ORGANICO",
+            "2026-02-24": "SECCO RESIDUALE",
+            "2026-02-25": "VETRO E LATTINE",
+            "2026-02-26": "CARTA E CARTONE",
+            "2026-02-27": "ORGANICO",
+            "2026-02-28": "PLASTICA",
+            // March 2026
+            "2026-03-01": "Nessuna Raccolta",
+            "2026-03-02": "ORGANICO",
+            "2026-03-03": "SECCO RESIDUALE",
+            "2026-03-04": "VETRO E LATTINE",
+            "2026-03-05": "CARTA E CARTONE",
+            "2026-03-06": "ORGANICO",
+            "2026-03-07": "PLASTICA",
+            "2026-03-08": "Nessuna Raccolta",
+            "2026-03-09": "ORGANICO",
+            "2026-03-10": "SECCO RESIDUALE",
+            "2026-03-11": "VETRO E LATTINE",
+            "2026-03-12": "CARTA E CARTONE",
+            "2026-03-13": "ORGANICO",
+            "2026-03-14": "PLASTICA",
+            "2026-03-15": "Nessuna Raccolta",
+            "2026-03-16": "ORGANICO",
+            "2026-03-17": "SECCO RESIDUALE",
+            "2026-03-18": "VETRO E LATTINE",
+            "2026-03-19": "CARTA E CARTONE",
+            "2026-03-20": "ORGANICO",
+            "2026-03-21": "PLASTICA",
+            "2026-03-22": "Nessuna Raccolta",
+            "2026-03-23": "ORGANICO",
+            "2026-03-24": "SECCO RESIDUALE",
+            "2026-03-25": "VETRO E LATTINE",
+            "2026-03-26": "CARTA E CARTONE",
+            "2026-03-27": "ORGANICO",
+            "2026-03-28": "PLASTICA",
+            "2026-03-29": "Nessuna Raccolta",
+            "2026-03-30": "ORGANICO",
+            "2026-03-31": "SECCO RESIDUALE",
         };
+
+        // Helper function to format date as YYYY-MM-DD
+        function formatDateKey(date) {
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}-${month}-${day}`;
+        }
+
+        // Helper function to get min date from schedule
+        function getMinDate() {
+            return new Date(2025, 0, 1); // January 1, 2025
+        }
+
+        // Helper function to get max date from schedule
+        function getMaxDate() {
+            return new Date(2026, 2, 31); // January 31, 2026
+        }
+
+        // Helper function to check if date is within valid range
+        function isDateInRange(date) {
+            const minDate = getMinDate();
+            const maxDate = getMaxDate();
+            return date >= minDate && date <= maxDate;
+        }
 
         // Function to get the waste type class
         function getWasteTypeClass(wasteType) {
@@ -482,10 +793,8 @@
             return `${days[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`;
         }
 
-        // Current selected date - ensure it's in 2025
         let selectedDate = new Date();
-        // Force the year to be 2025
-        selectedDate.setFullYear(2025);
+        selectedDate.setFullYear(2026);
 
         // Function to update the waste type displays
         function updateWasteInfo(date) {
@@ -508,10 +817,10 @@
             document.getElementById("tomorrow-date").textContent = formatDate(tomorrow);
             document.getElementById("day-after-date").textContent = formatDate(dayAfter);
 
-            // Get waste types
-            const displayDateWaste = wasteSchedule[displayDate.getMonth()][displayDate.getDate()] || "Nessuna Raccolta";
-            const tomorrowWaste = wasteSchedule[tomorrow.getMonth()][tomorrow.getDate()] || "Nessuna Raccolta";
-            const dayAfterWaste = wasteSchedule[dayAfter.getMonth()][dayAfter.getDate()] || "Nessuna Raccolta";
+            // Get waste types using new format
+            const displayDateWaste = wasteSchedule[formatDateKey(displayDate)] || "Nessuna Raccolta";
+            const tomorrowWaste = wasteSchedule[formatDateKey(tomorrow)] || "Nessuna Raccolta";
+            const dayAfterWaste = wasteSchedule[formatDateKey(dayAfter)] || "Nessuna Raccolta";
 
             // Set waste types with appropriate classes
             const todayWasteElement = document.getElementById("today-waste-type");
@@ -563,9 +872,12 @@
 
         // Navigate to previous month
         prevMonthButton.addEventListener("click", function () {
-            // Check if going to previous month would go before 2025
-            if (currentCalendarDate.getFullYear() === 2025 && currentCalendarDate.getMonth() === 0) {
-                return; // Don't allow going before January 2025
+            const minDate = getMinDate();
+            const testDate = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth() - 1, 1);
+            
+            // Don't allow going before minDate
+            if (testDate < minDate) {
+                return;
             }
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
             renderCalendar(currentCalendarDate);
@@ -573,9 +885,13 @@
 
         // Navigate to next month
         nextMonthButton.addEventListener("click", function () {
-            // Check if going to next month would go beyond 2025
-            if (currentCalendarDate.getFullYear() === 2025 && currentCalendarDate.getMonth() === 11) {
-                return; // Don't allow going beyond December 2025
+            const maxDate = getMaxDate();
+            const testDate = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth() + 1, 1);
+            
+            // Don't allow going beyond maxDate's month
+            if (testDate.getFullYear() > maxDate.getFullYear() || 
+                (testDate.getFullYear() === maxDate.getFullYear() && testDate.getMonth() > maxDate.getMonth())) {
+                return;
             }
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
             renderCalendar(currentCalendarDate);
@@ -583,9 +899,13 @@
 
         // Go to today
         todayButton.addEventListener("click", function () {
-            selectedDate = new Date();
-            // Force the year to be 2025
-            selectedDate.setFullYear(2025);
+            const today = new Date();
+            if (isDateInRange(today)) {
+                selectedDate = today;
+            } else {
+                // Default to minDate if today is out of range
+                selectedDate = getMinDate();
+            }
             updateWasteInfo(selectedDate);
             calendarModal.hide();
         });
@@ -633,8 +953,9 @@
                     dayElement.classList.add("selected");
                 }
 
-                // Add waste type indicator
-                const wasteType = wasteSchedule[date.getMonth()][day];
+                // Add waste type indicator using new format
+                const dateKey = formatDateKey(currentDate);
+                const wasteType = wasteSchedule[dateKey];
                 if (wasteType) {
                     const indicator = document.createElement("div");
                     indicator.className = "waste-indicator " + getWasteTypeClass(wasteType);
@@ -666,35 +987,24 @@
         function findNextWastePickups(wasteType, startDate, count = 3) {
             const results = [];
             const currentDate = new Date(startDate);
-
-            // Ensure we're looking at 2025
-            currentDate.setFullYear(2025);
+            const maxDate = getMaxDate();
 
             // Start from tomorrow
             currentDate.setDate(currentDate.getDate() + 1);
 
             // Loop until we find the requested number of occurrences
-            while (results.length < count) {
-                const month = currentDate.getMonth();
-                const day = currentDate.getDate();
+            while (results.length < count && currentDate <= maxDate) {
+                const dateKey = formatDateKey(currentDate);
+                const wasteForDay = wasteSchedule[dateKey];
 
                 // Check if this day has the requested waste type
-                if (wasteSchedule[month] &&
-                    wasteSchedule[month][day] &&
-                    wasteSchedule[month][day] === wasteType) {
-
+                if (wasteForDay && wasteForDay === wasteType) {
                     // Add to results
                     results.push(new Date(currentDate));
                 }
 
                 // Move to next day
                 currentDate.setDate(currentDate.getDate() + 1);
-
-                // Prevent infinite loop if we can't find enough occurrences
-                // (shouldn't happen with our data, but just in case)
-                if (currentDate.getFullYear() > 2025) {
-                    break;
-                }
             }
 
             return results;
