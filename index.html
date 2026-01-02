@@ -796,8 +796,73 @@
         let selectedDate = new Date();
         selectedDate.setFullYear(2026);
 
+        // URL Hash State Management
+        function encodeState() {
+            const dateStr = formatDateKey(selectedDate);
+            const modalOpen = calendarModal && document.getElementById('calendar-container').classList.contains('show');
+            const calendarMonth = modalOpen ? `${currentCalendarDate.getFullYear()}-${String(currentCalendarDate.getMonth() + 1).padStart(2, '0')}` : '';
+            
+            const params = new URLSearchParams();
+            params.set('date', dateStr);
+            if (modalOpen) {
+                params.set('modal', 'calendar');
+                params.set('month', calendarMonth);
+            }
+            
+            window.history.replaceState(null, '', '#' + params.toString());
+        }
+
+        function decodeState() {
+            const hash = window.location.hash.substring(1);
+            if (!hash) return false;
+            
+            const params = new URLSearchParams(hash);
+            const dateStr = params.get('date');
+            const modal = params.get('modal');
+            const monthStr = params.get('month');
+            
+            let stateRestored = false;
+            
+            // Restore selected date
+            if (dateStr) {
+                const parts = dateStr.split('-');
+                if (parts.length === 3) {
+                    const year = parseInt(parts[0]);
+                    const month = parseInt(parts[1]) - 1;
+                    const day = parseInt(parts[2]);
+                    const date = new Date(year, month, day);
+                    
+                    if (isDateInRange(date)) {
+                        selectedDate = date;
+                        stateRestored = true;
+                    }
+                }
+            }
+            
+            // Restore modal state
+            if (modal === 'calendar' && monthStr) {
+                const parts = monthStr.split('-');
+                if (parts.length === 2) {
+                    const year = parseInt(parts[0]);
+                    const month = parseInt(parts[1]) - 1;
+                    currentCalendarDate = new Date(year, month, 1);
+                    
+                    // Schedule modal opening after Bootstrap is initialized
+                    setTimeout(() => {
+                        if (calendarModal) {
+                            renderCalendar(currentCalendarDate);
+                            calendarModal.show();
+                        }
+                    }, 100);
+                    stateRestored = true;
+                }
+            }
+            
+            return stateRestored;
+        }
+
         // Function to update the waste type displays
-        function updateWasteInfo(date) {
+        function updateWasteInfo(date, updateHash = true) {
             const displayDate = new Date(date);
             const tomorrow = new Date(displayDate);
             tomorrow.setDate(displayDate.getDate() + 1);
@@ -834,6 +899,11 @@
             const dayAfterWasteElement = document.getElementById("day-after-waste-type");
             dayAfterWasteElement.textContent = dayAfterWaste;
             dayAfterWasteElement.className = "badge-waste small " + getWasteTypeClass(dayAfterWaste);
+            
+            // Update URL hash
+            if (updateHash) {
+                encodeState();
+            }
         }
 
         // Calendar functionality
@@ -856,6 +926,26 @@
         // Initialize Bootstrap modal when DOM is loaded
         document.addEventListener('DOMContentLoaded', function () {
             calendarModal = new bootstrap.Modal(document.getElementById('calendar-container'));
+            
+            // Add modal event listeners for URL hash updates
+            const modalElement = document.getElementById('calendar-container');
+            modalElement.addEventListener('shown.bs.modal', function () {
+                encodeState();
+            });
+            
+            modalElement.addEventListener('hidden.bs.modal', function () {
+                encodeState();
+            });
+            
+            // Try to restore state from URL on page load
+            if (!decodeState()) {
+                // If no state in URL, update with current state
+                updateWasteInfo(selectedDate, false);
+                encodeState();
+            } else {
+                // State was restored from URL, update the display
+                updateWasteInfo(selectedDate, false);
+            }
         });
 
         // Open calendar when date picker button is clicked
@@ -881,6 +971,7 @@
             }
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
             renderCalendar(currentCalendarDate);
+            encodeState(); // Update URL hash
         });
 
         // Navigate to next month
@@ -895,6 +986,7 @@
             }
             currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
             renderCalendar(currentCalendarDate);
+            encodeState(); // Update URL hash
         });
 
         // Go to today
@@ -972,9 +1064,6 @@
                 calendarGrid.appendChild(dayElement);
             }
         }
-
-        // Initialize the page
-        updateWasteInfo(selectedDate);
 
         // Waste Search Functionality
         const wasteTypeSelect = document.getElementById("waste-type-select");
