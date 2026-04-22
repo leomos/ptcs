@@ -269,6 +269,35 @@
         </div>
     </div>
 
+    <!-- iOS Install Instructions Modal -->
+    <div class="modal fade" id="ios-install-modal" tabindex="-1" aria-labelledby="iosInstallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="iosInstallModalLabel">Installa l'app</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Chiudi"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Per installare questa app sul tuo dispositivo iOS:</p>
+                    <ol class="mb-0">
+                        <li>Tocca l'icona <strong>Condividi</strong>
+                            <svg class="icon icon-sm align-middle">
+                                <use href="bootstrap-italia/svg/sprites.svg#it-share"></use>
+                            </svg>
+                            nella barra di Safari.
+                        </li>
+                        <li>Scorri e seleziona <strong>"Aggiungi a Home"</strong>.</li>
+                        <li>Tocca <strong>"Aggiungi"</strong> in alto a destra.</li>
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap Italia JavaScript -->
     <script src="bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>
 
@@ -1114,44 +1143,46 @@
         // PWA Installation functionality
         let deferredPrompt;
         const installButton = document.getElementById('install-button');
+        const isStandalone = window.navigator.standalone === true
+            || window.matchMedia('(display-mode: standalone)').matches;
+        const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent)
+            || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
-        // Listen for the beforeinstallprompt event
+        // Register service worker so Chromium browsers consider the page installable.
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').catch(() => { /* ignore */ });
+            });
+        }
+
         window.addEventListener('beforeinstallprompt', (e) => {
-            // Prevent the mini-infobar from appearing on mobile
             e.preventDefault();
-            // Save the event so it can be triggered later
+            if (isStandalone) return;
             deferredPrompt = e;
-            // Show the install button
             installButton.style.display = 'flex';
         });
 
-        // Handle install button click
         installButton.addEventListener('click', async () => {
             if (deferredPrompt) {
-                // Show the install prompt
                 deferredPrompt.prompt();
-                // Wait for the user to respond to the prompt
-                const { outcome } = await deferredPrompt.userChoice;
-                // Clear the deferredPrompt for future use
+                await deferredPrompt.userChoice;
                 deferredPrompt = null;
-                // Hide the install button
                 installButton.style.display = 'none';
+            } else if (isIos) {
+                bootstrap.Modal.getOrCreateInstance(document.getElementById('ios-install-modal')).show();
             }
         });
 
-        // Listen for the app to be installed
-        window.addEventListener('appinstalled', (e) => {
-            // Hide the install button
+        window.addEventListener('appinstalled', () => {
             installButton.style.display = 'none';
-            // Clear the deferredPrompt
             deferredPrompt = null;
         });
 
-        // Check if app is already installed (for iOS and other platforms)
         window.addEventListener('DOMContentLoaded', () => {
-            // For iOS Safari, check if running in standalone mode
-            if (window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches) {
+            if (isStandalone) {
                 installButton.style.display = 'none';
+            } else if (isIos) {
+                installButton.style.display = 'flex';
             }
         });
     </script>
