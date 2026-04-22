@@ -340,15 +340,16 @@
 .install-button {
   background-color: white;
   color: var(--comune-green);
-  border: 2px solid var(--comune-green);
-  border-radius: 6px;
-  padding: 8px 16px;
-  font-weight: bold;
-  font-size: 0.9rem;
+  border: 1px solid var(--comune-green);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-weight: 600;
+  font-size: 0.75rem;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 3px;
+  white-space: nowrap;
 }
 
 .install-button:hover {
@@ -364,9 +365,25 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .it-header-wrapper .it-header-slim-wrapper-content {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .it-header-wrapper .header-slim-left {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .it-header-wrapper .it-brand-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .it-header-wrapper .header-slim-right {
+    flex: 0 0 auto;
   }
   
   .badge-waste {
@@ -376,8 +393,8 @@
   }
   
   .install-button {
-    font-size: 0.8rem;
-    padding: 6px 12px;
+    font-size: 0.7rem;
+    padding: 2px 6px;
   }
 }
 
