@@ -1,7 +1,24 @@
-/* 
+/*
  * Bootstrap Italia Custom Theme for Partinico Waste Collection PWA
  * Preserves the green theme (#005e25) and waste type color coding
  */
+
+/* Self-hosted Arya font (promo banner) - latin subset, works offline */
+@font-face {
+  font-family: 'Arya';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/arya-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Arya';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('fonts/arya-700.woff2') format('woff2');
+}
 
 :root {
   /* Primary Brand Colors - Override Bootstrap Italia defaults */
