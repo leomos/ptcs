@@ -17,6 +17,10 @@
 
     <!-- Bootstrap Italia CSS -->
     <link rel="stylesheet" href="bootstrap-italia/css/bootstrap-italia.min.css">
+    <!-- Arya font (promo banner) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arya:wght@400;700&display=swap" rel="stylesheet">
     <!-- Custom Theme CSS -->
     <link rel="stylesheet" href="custom-theme.css">
 
@@ -56,6 +60,41 @@
             </div>
         </div>
     </header>
+
+    <!-- Promo Banner -->
+    <div class="container mt-3" id="promo-banner-wrapper">
+        <div class="promo-banner">
+            <div class="promo-banner-top">
+                <p class="promo-banner-title">Sei una donna con endometriosi o adenomiosi</p>
+                <button type="button" class="promo-banner-close" id="promo-banner-close" aria-label="Chiudi messaggio">
+                    <svg class="promo-banner-icon" viewBox="0 0 30 30" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.463 22.0353C7.89799 21.4703 7.95154 20.539 8.57759 20.0425L15.0181 14.9345C15.1727 14.8119 15.3946 14.8247 15.5341 14.9642C15.6736 15.1037 15.6863 15.3256 15.5637 15.4802L10.4558 21.9207C9.95923 22.5467 9.02802 22.6003 8.463 22.0353Z"
+                            fill="#1A29C0" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M22.5331 22.0353C23.0981 21.4703 23.0446 20.539 22.4185 20.0425L15.978 14.9345C15.8234 14.8119 15.6015 14.8247 15.462 14.9642C15.3225 15.1037 15.3098 15.3256 15.4324 15.4802L20.5403 21.9207C21.0369 22.5467 21.9681 22.6003 22.5331 22.0353Z"
+                            fill="#1A29C0" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.463 7.96375C7.89799 8.52877 7.95154 9.45998 8.57759 9.95651L15.0181 15.0645C15.1727 15.1871 15.3946 15.1743 15.5341 15.0348C15.6736 14.8953 15.6863 14.6734 15.5637 14.5188L10.4558 8.07834C9.95923 7.45229 9.02802 7.39874 8.463 7.96375Z"
+                            fill="#1A29C0" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M22.5331 7.96375C23.0981 8.52877 23.0446 9.45998 22.4185 9.95651L15.978 15.0645C15.8234 15.1871 15.6015 15.1743 15.462 15.0348C15.3225 14.8953 15.3098 14.6734 15.4324 14.5188L20.5403 8.07834C21.0369 7.45229 21.9681 7.39874 22.5331 7.96375Z"
+                            fill="#1A29C0" />
+                    </svg>
+                </button>
+            </div>
+            <a href="https://agendo.health/download" target="_blank" rel="noopener noreferrer" class="promo-banner-cta">
+                Scopri Agendo
+                <svg class="promo-banner-icon" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <path
+                        d="M18.3359 10.2528C18.717 9.91407 19.2845 9.91938 19.6582 10.2469L19.7471 10.3358L24.3379 15.4998L19.7471 20.6639C19.3802 21.0767 18.7487 21.1138 18.3359 20.7469C17.955 20.4082 17.8934 19.8439 18.1748 19.4344L18.2529 19.3358L20.5596 16.7391L12.3555 18.869C10.151 19.4412 8 17.7773 8 15.4998C8.00001 13.2223 10.151 11.5585 12.3555 12.1307L20.5596 14.2596L18.2529 11.6639C17.9142 11.2829 17.9195 10.7153 18.2471 10.3416L18.3359 10.2528Z"
+                        fill="#1A29C0" />
+                </svg>
+            </a>
+        </div>
+    </div>
 
     <!-- Main Content Container -->
     <div class="container">
@@ -304,6 +343,19 @@
 
     <!-- Bootstrap Italia JavaScript -->
     <script src="bootstrap-italia/js/bootstrap-italia.bundle.min.js"></script>
+
+    <!-- Promo Banner dismiss -->
+    <script>
+        (function () {
+            const closeBtn = document.getElementById('promo-banner-close');
+            const wrapper = document.getElementById('promo-banner-wrapper');
+            if (closeBtn && wrapper) {
+                closeBtn.addEventListener('click', function () {
+                    wrapper.remove();
+                });
+            }
+        })();
+    </script>
 
     <script>
         bootstrap.loadFonts('/bootstrap-italia/fonts');

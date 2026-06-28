@@ -54,6 +54,70 @@
   --bs-btn-active-border-color: var(--comune-green-dark);
 }
 
+/* Promo Banner */
+.promo-banner {
+  position: relative;
+  background-color: #F9DEDC;
+  border-radius: 6px;
+  padding: 0.6rem 0.85rem;
+  font-family: 'Arya', sans-serif;
+}
+
+.promo-banner-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.promo-banner-title {
+  margin: 0 0 0.2rem 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #2C1F19;
+}
+
+.promo-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1A29C0;
+  text-decoration: none;
+}
+
+.promo-banner-cta:hover {
+  color: #1A29C0;
+  text-decoration: underline;
+}
+
+.promo-banner-icon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.promo-banner-cta .promo-banner-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.promo-banner-close {
+  flex: 0 0 auto;
+  display: inline-flex;
+  padding: 0;
+  line-height: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.promo-banner-close .promo-banner-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
 /* Header Customizations */
 .it-header-wrapper .it-header-slim-wrapper {
   background-color: var(--comune-green);
