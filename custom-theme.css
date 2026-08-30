@@ -20,6 +20,15 @@
   src: url('fonts/arya-700.woff2') format('woff2');
 }
 
+/* Self-hosted Saira font ("3S Schillizzi" brand mark) - latin subset */
+@font-face {
+  font-family: 'Saira';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/saira-600.woff2') format('woff2');
+}
+
 :root {
   /* Primary Brand Colors - Override Bootstrap Italia defaults */
   --bs-primary: #005e25;
@@ -96,16 +105,34 @@
   height: 100%;
 }
 
-/* "3S Schillizzi" brand mark (schillizzi.it).
-   TODO: schillizzi.it was unreachable (server down) when this was added, so
-   the font/color below approximate the brand — replace these values with the
-   exact ones from the site once it is back online. */
+/* "3S Schillizzi" brand mark — exact style of the "3S" logo heading on
+   schillizzi.it (color #FF2F2F, "Saira" 600, from the site's Elementor CSS) */
 .schillizzi-brand {
-  font-family: 'Arya', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #333333;
+  font-family: 'Saira', sans-serif;
+  font-weight: 600;
+  color: #FF2F2F;
+}
+
+/* Schillizzi banner variant — palette taken from schillizzi.it:
+   #242424 section background, #ffffff text, #FF2F2F accent */
+.promo-banner.promo-banner-schillizzi {
+  background-color: #242424;
+}
+
+.promo-banner-schillizzi .promo-banner-title {
+  color: #ffffff;
+}
+
+.promo-banner-schillizzi .promo-banner-cta {
+  color: #ffffff;
+}
+
+.promo-banner-schillizzi .promo-banner-cta:hover {
+  color: #ffffff;
+}
+
+.promo-banner-schillizzi .promo-banner-icon path {
+  fill: #FF2F2F;
 }
 
 /* Promo Banner */
