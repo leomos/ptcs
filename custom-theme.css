@@ -71,6 +71,43 @@
   --bs-btn-active-border-color: var(--comune-green-dark);
 }
 
+/* Promo Banner Carousel: horizontally slidable row of banners (swipe or
+   auto-advance every 5s via JS in index.html) */
+.promo-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  border-radius: 6px;
+}
+
+.promo-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.promo-carousel-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.promo-carousel-slide .promo-banner {
+  height: 100%;
+}
+
+/* "3S Schillizzi" brand mark (schillizzi.it).
+   TODO: schillizzi.it was unreachable (server down) when this was added, so
+   the font/color below approximate the brand — replace these values with the
+   exact ones from the site once it is back online. */
+.schillizzi-brand {
+  font-family: 'Arya', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333333;
+}
+
 /* Promo Banner */
 .promo-banner {
   position: relative;
