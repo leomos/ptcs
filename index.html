@@ -18,7 +18,7 @@
     <!-- Bootstrap Italia CSS -->
     <link rel="stylesheet" href="bootstrap-italia/css/bootstrap-italia.min.css">
     <!-- Custom Theme CSS (self-hosted Arya font declared inside) -->
-    <link rel="stylesheet" href="custom-theme.css?v=20260830-2">
+    <link rel="stylesheet" href="custom-theme.css?v=20260830-3">
 
 </head>
 
@@ -396,11 +396,19 @@
                     stop();
                     return;
                 }
-                const width = carousel.clientWidth;
-                if (!width) return;
-                const current = Math.round(carousel.scrollLeft / width);
+                const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                if (maxScroll < 8) return; // all cards fit side by side, nothing to slide
+                // find the slide closest to the current scroll position
+                let current = 0;
+                slides.forEach(function (slide, i) {
+                    if (Math.abs(slide.offsetLeft - carousel.scrollLeft) <
+                        Math.abs(slides[current].offsetLeft - carousel.scrollLeft)) {
+                        current = i;
+                    }
+                });
                 const target = (current + 1) % slides.length;
-                carousel.scrollTo({ left: target * width, behavior: 'smooth' });
+                const left = Math.min(slides[target].offsetLeft, maxScroll);
+                carousel.scrollTo({ left: left, behavior: 'smooth' });
             }
 
             function start() {

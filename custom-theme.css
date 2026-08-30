@@ -80,25 +80,33 @@
   --bs-btn-active-border-color: var(--comune-green-dark);
 }
 
-/* Promo Banner Carousel: horizontally slidable row of banners (swipe or
-   auto-advance every 5s via JS in index.html) */
+/* Promo Banner Carousel: banners as cards side by side in one swipeable
+   row (auto-advance every 5s via JS in index.html when they overflow) */
 .promo-carousel {
   display: flex;
+  gap: 0.75rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  border-radius: 6px;
 }
 
 .promo-carousel::-webkit-scrollbar {
   display: none;
 }
 
+/* On small screens each card takes most of the row so the next one peeks
+   in from the side; from md up both cards fit next to each other. */
 .promo-carousel-slide {
-  flex: 0 0 100%;
-  min-width: 100%;
+  flex: 0 0 86%;
+  min-width: 0;
   scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .promo-carousel-slide {
+    flex: 1 1 0;
+  }
 }
 
 .promo-carousel-slide .promo-banner {
