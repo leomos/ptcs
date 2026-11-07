@@ -1,0 +1,2312 @@
+{
+ "source": "https://www.comune.alcamo.tp.it/it/garbage-calendars",
+ "last_modified": "2026-03-19",
+ "zones": {
+  "verde": {
+   "calendar_id": 601,
+   "days": {
+    "2026-01-01": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-02": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-01-03": [
+     "Plastica"
+    ],
+    "2026-01-05": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-06": [
+     "Carta"
+    ],
+    "2026-01-07": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-08": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-09": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-01-10": [
+     "Plastica"
+    ],
+    "2026-01-12": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-13": [
+     "Carta"
+    ],
+    "2026-01-14": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-15": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-16": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-01-17": [
+     "Plastica"
+    ],
+    "2026-01-19": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-20": [
+     "Carta"
+    ],
+    "2026-01-21": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-22": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-23": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-01-24": [
+     "Plastica"
+    ],
+    "2026-01-26": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-27": [
+     "Carta"
+    ],
+    "2026-01-28": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-29": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-30": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-01-31": [
+     "Plastica"
+    ],
+    "2026-02-02": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-03": [
+     "Carta"
+    ],
+    "2026-02-04": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-05": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-06": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-02-07": [
+     "Plastica"
+    ],
+    "2026-02-09": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-10": [
+     "Carta"
+    ],
+    "2026-02-11": [
+     "Pannolini e pannoloni (su richiesta)",
+     "Umido"
+    ],
+    "2026-02-12": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-13": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-02-14": [
+     "Plastica"
+    ],
+    "2026-02-16": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-17": [
+     "Carta"
+    ],
+    "2026-02-18": [
+     "Pannolini e pannoloni (su richiesta)",
+     "Umido"
+    ],
+    "2026-02-19": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-20": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-02-21": [
+     "Plastica"
+    ],
+    "2026-02-23": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-24": [
+     "Carta"
+    ],
+    "2026-02-25": [
+     "Pannolini e pannoloni (su richiesta)",
+     "Umido"
+    ],
+    "2026-02-26": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-27": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-02-28": [
+     "Plastica"
+    ],
+    "2026-03-02": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-03": [
+     "Carta"
+    ],
+    "2026-03-04": [
+     "Pannolini e pannoloni (su richiesta)",
+     "Umido"
+    ],
+    "2026-03-05": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-06": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-03-07": [
+     "Plastica"
+    ],
+    "2026-03-09": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-10": [
+     "Carta"
+    ],
+    "2026-03-11": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-12": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-13": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-03-14": [
+     "Plastica"
+    ],
+    "2026-03-16": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-17": [
+     "Carta"
+    ],
+    "2026-03-18": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-19": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-20": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-03-21": [
+     "Plastica"
+    ],
+    "2026-03-23": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-24": [
+     "Carta"
+    ],
+    "2026-03-25": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-26": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-27": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-03-28": [
+     "Plastica"
+    ],
+    "2026-03-30": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-31": [
+     "Carta"
+    ],
+    "2026-04-01": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-02": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-03": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-04-04": [
+     "Plastica"
+    ],
+    "2026-04-06": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-07": [
+     "Carta"
+    ],
+    "2026-04-08": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-09": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-10": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-04-11": [
+     "Plastica"
+    ],
+    "2026-04-13": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-14": [
+     "Carta"
+    ],
+    "2026-04-15": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-16": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-17": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-04-18": [
+     "Plastica"
+    ],
+    "2026-04-20": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-21": [
+     "Carta"
+    ],
+    "2026-04-22": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-23": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-24": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-04-25": [
+     "Plastica"
+    ],
+    "2026-04-27": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-28": [
+     "Carta"
+    ],
+    "2026-04-29": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-30": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-01": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-05-02": [
+     "Plastica"
+    ],
+    "2026-05-04": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-05": [
+     "Carta"
+    ],
+    "2026-05-06": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-07": [
+     "Pannolini e pannoloni (su richiesta)",
+     "Secco Residuo"
+    ],
+    "2026-05-08": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-05-09": [
+     "Plastica"
+    ],
+    "2026-05-11": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-12": [
+     "Carta"
+    ],
+    "2026-05-13": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-14": [
+     "Pannolini e pannoloni (su richiesta)",
+     "Secco Residuo"
+    ],
+    "2026-05-15": [
+     "Metalli",
+     "Umido"
+    ],
+    "2026-05-16": [
+     "Plastica"
+    ],
+    "2026-05-18": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-19": [
+     "Carta"
+    ],
+    "2026-05-20": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-21": [
+     "Pannolini e pannoloni (su richiesta)",
+     "Secco Residuo"
+    ],
+    "2026-05-22": [
+     "Vetro",
+     "Umido"
+    ],
+    "2026-05-23": [
+     "Plastica"
+    ],
+    "2026-05-25": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-26": [
+     "Carta"
+    ],
+    "2026-05-27": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-28": [
+     "Pannolini e pannoloni (su richiesta)",
+     "Secco Residuo"
+    ],
+    "2026-05-29": [
+     "Metalli",
+     "Umido"
+    ],
+    "2026-05-30": [
+     "Plastica"
+    ],
+    "2026-06-01": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-02": [
+     "Carta"
+    ],
+    "2026-06-03": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-04": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-05": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-06-06": [
+     "Plastica"
+    ],
+    "2026-06-08": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-09": [
+     "Carta"
+    ],
+    "2026-06-10": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-11": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-12": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-06-13": [
+     "Plastica"
+    ],
+    "2026-06-15": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-16": [
+     "Carta"
+    ],
+    "2026-06-17": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-18": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-19": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-06-20": [
+     "Plastica"
+    ],
+    "2026-06-22": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-23": [
+     "Carta"
+    ],
+    "2026-06-24": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-25": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-26": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-06-27": [
+     "Plastica"
+    ],
+    "2026-06-29": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-30": [
+     "Carta"
+    ],
+    "2026-07-01": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-02": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-03": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-07-04": [
+     "Plastica"
+    ],
+    "2026-07-06": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-07": [
+     "Carta"
+    ],
+    "2026-07-08": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-09": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-10": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-07-11": [
+     "Plastica"
+    ],
+    "2026-07-13": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-14": [
+     "Carta"
+    ],
+    "2026-07-15": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-16": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-17": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-07-18": [
+     "Plastica"
+    ],
+    "2026-07-20": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-21": [
+     "Carta"
+    ],
+    "2026-07-22": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-23": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-24": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-07-25": [
+     "Plastica"
+    ],
+    "2026-07-27": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-28": [
+     "Carta"
+    ],
+    "2026-07-29": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-30": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-31": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-08-01": [
+     "Plastica"
+    ],
+    "2026-08-03": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-04": [
+     "Carta"
+    ],
+    "2026-08-05": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-06": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-07": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-08-08": [
+     "Plastica"
+    ],
+    "2026-08-10": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-11": [
+     "Carta"
+    ],
+    "2026-08-12": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-13": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-14": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-08-15": [
+     "Plastica"
+    ],
+    "2026-08-17": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-18": [
+     "Carta"
+    ],
+    "2026-08-19": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-20": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-21": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-08-22": [
+     "Plastica"
+    ],
+    "2026-08-24": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-25": [
+     "Carta"
+    ],
+    "2026-08-26": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-27": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-28": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-08-29": [
+     "Plastica"
+    ],
+    "2026-08-31": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-01": [
+     "Carta"
+    ],
+    "2026-09-02": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-03": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-04": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-09-05": [
+     "Plastica"
+    ],
+    "2026-09-07": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-08": [
+     "Carta"
+    ],
+    "2026-09-09": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-10": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-11": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-09-12": [
+     "Plastica"
+    ],
+    "2026-09-14": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-15": [
+     "Carta"
+    ],
+    "2026-09-16": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-17": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-18": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-09-19": [
+     "Plastica"
+    ],
+    "2026-09-21": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-22": [
+     "Carta"
+    ],
+    "2026-09-23": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-24": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-25": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-09-26": [
+     "Plastica"
+    ],
+    "2026-09-28": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-29": [
+     "Carta"
+    ],
+    "2026-09-30": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-01": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-02": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-10-03": [
+     "Plastica"
+    ],
+    "2026-10-05": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-06": [
+     "Carta"
+    ],
+    "2026-10-07": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-08": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-09": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-10-10": [
+     "Plastica"
+    ],
+    "2026-10-12": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-13": [
+     "Carta"
+    ],
+    "2026-10-14": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-15": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-16": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-10-17": [
+     "Plastica"
+    ],
+    "2026-10-19": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-20": [
+     "Carta"
+    ],
+    "2026-10-21": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-22": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-23": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-10-24": [
+     "Plastica"
+    ],
+    "2026-10-26": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-27": [
+     "Carta"
+    ],
+    "2026-10-28": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-29": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-30": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-10-31": [
+     "Plastica"
+    ],
+    "2026-11-02": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-03": [
+     "Carta"
+    ],
+    "2026-11-04": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-05": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-06": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-11-07": [
+     "Plastica"
+    ],
+    "2026-11-09": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-10": [
+     "Carta"
+    ],
+    "2026-11-11": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-12": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-13": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-11-14": [
+     "Plastica"
+    ],
+    "2026-11-16": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-17": [
+     "Carta"
+    ],
+    "2026-11-18": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-19": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-20": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-11-21": [
+     "Plastica"
+    ],
+    "2026-11-23": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-24": [
+     "Carta"
+    ],
+    "2026-11-25": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-26": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-27": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-11-28": [
+     "Plastica"
+    ],
+    "2026-11-30": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-01": [
+     "Carta"
+    ],
+    "2026-12-02": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-03": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-04": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-12-05": [
+     "Plastica"
+    ],
+    "2026-12-07": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-08": [
+     "Carta"
+    ],
+    "2026-12-09": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-10": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-11": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-12-12": [
+     "Plastica"
+    ],
+    "2026-12-14": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-15": [
+     "Carta"
+    ],
+    "2026-12-16": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-17": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-18": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-12-19": [
+     "Plastica"
+    ],
+    "2026-12-21": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-22": [
+     "Carta"
+    ],
+    "2026-12-23": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-24": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-25": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-12-26": [
+     "Plastica"
+    ],
+    "2026-12-28": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-29": [
+     "Carta"
+    ],
+    "2026-12-30": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-31": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ]
+   }
+  },
+  "azzurra": {
+   "calendar_id": 606,
+   "days": {
+    "2026-01-01": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-01-02": [
+     "Plastica"
+    ],
+    "2026-01-03": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-05": [
+     "Carta"
+    ],
+    "2026-01-06": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-07": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-08": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-01-09": [
+     "Plastica"
+    ],
+    "2026-01-10": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-12": [
+     "Carta"
+    ],
+    "2026-01-13": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-14": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-15": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-01-16": [
+     "Plastica"
+    ],
+    "2026-01-17": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-19": [
+     "Carta"
+    ],
+    "2026-01-20": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-21": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-22": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-01-23": [
+     "Plastica"
+    ],
+    "2026-01-24": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-26": [
+     "Carta"
+    ],
+    "2026-01-27": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-28": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-01-29": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-01-30": [
+     "Plastica"
+    ],
+    "2026-01-31": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-02": [
+     "Carta"
+    ],
+    "2026-02-03": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-04": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-05": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-02-06": [
+     "Plastica"
+    ],
+    "2026-02-07": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-09": [
+     "Carta"
+    ],
+    "2026-02-10": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-11": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-12": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-02-13": [
+     "Plastica"
+    ],
+    "2026-02-14": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-16": [
+     "Carta"
+    ],
+    "2026-02-17": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-18": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-19": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-02-20": [
+     "Plastica"
+    ],
+    "2026-02-21": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-23": [
+     "Carta"
+    ],
+    "2026-02-24": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-25": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-02-26": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-02-27": [
+     "Plastica"
+    ],
+    "2026-02-28": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-02": [
+     "Carta"
+    ],
+    "2026-03-03": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-04": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-05": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-03-06": [
+     "Plastica"
+    ],
+    "2026-03-07": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-09": [
+     "Carta"
+    ],
+    "2026-03-10": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-11": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-12": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-03-13": [
+     "Plastica"
+    ],
+    "2026-03-14": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-16": [
+     "Carta"
+    ],
+    "2026-03-17": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-18": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-19": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-03-20": [
+     "Plastica"
+    ],
+    "2026-03-21": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-23": [
+     "Carta"
+    ],
+    "2026-03-24": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-25": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-26": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-03-27": [
+     "Plastica"
+    ],
+    "2026-03-28": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-03-30": [
+     "Carta"
+    ],
+    "2026-03-31": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-01": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-02": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-04-03": [
+     "Plastica"
+    ],
+    "2026-04-04": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-06": [
+     "Carta"
+    ],
+    "2026-04-07": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-08": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-09": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-04-10": [
+     "Plastica"
+    ],
+    "2026-04-11": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-13": [
+     "Carta"
+    ],
+    "2026-04-14": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-15": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-16": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-04-17": [
+     "Plastica"
+    ],
+    "2026-04-18": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-20": [
+     "Carta"
+    ],
+    "2026-04-21": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-22": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-23": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-04-24": [
+     "Plastica"
+    ],
+    "2026-04-25": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-27": [
+     "Carta"
+    ],
+    "2026-04-28": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-29": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-04-30": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-05-01": [
+     "Plastica"
+    ],
+    "2026-05-02": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-04": [
+     "Carta"
+    ],
+    "2026-05-05": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-06": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-07": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-05-08": [
+     "Plastica"
+    ],
+    "2026-05-09": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-11": [
+     "Carta"
+    ],
+    "2026-05-12": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-13": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-14": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-05-15": [
+     "Plastica"
+    ],
+    "2026-05-16": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-18": [
+     "Carta"
+    ],
+    "2026-05-19": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-20": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-21": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-05-22": [
+     "Plastica"
+    ],
+    "2026-05-23": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-25": [
+     "Carta"
+    ],
+    "2026-05-26": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-27": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-05-28": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-05-29": [
+     "Plastica"
+    ],
+    "2026-05-30": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-01": [
+     "Carta"
+    ],
+    "2026-06-02": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-03": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-04": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-06-05": [
+     "Plastica"
+    ],
+    "2026-06-06": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-08": [
+     "Carta"
+    ],
+    "2026-06-09": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-10": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-11": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-06-12": [
+     "Plastica"
+    ],
+    "2026-06-13": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-15": [
+     "Carta"
+    ],
+    "2026-06-16": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-17": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-18": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-06-19": [
+     "Plastica"
+    ],
+    "2026-06-20": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-22": [
+     "Carta"
+    ],
+    "2026-06-23": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-24": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-25": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-06-26": [
+     "Plastica"
+    ],
+    "2026-06-27": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-06-29": [
+     "Carta"
+    ],
+    "2026-06-30": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-01": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-02": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-07-03": [
+     "Plastica"
+    ],
+    "2026-07-04": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-06": [
+     "Carta"
+    ],
+    "2026-07-07": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-08": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-09": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-07-10": [
+     "Plastica"
+    ],
+    "2026-07-11": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-13": [
+     "Carta"
+    ],
+    "2026-07-14": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-15": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-16": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-07-17": [
+     "Plastica"
+    ],
+    "2026-07-18": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-20": [
+     "Carta"
+    ],
+    "2026-07-21": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-22": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-23": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-07-24": [
+     "Plastica"
+    ],
+    "2026-07-25": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-27": [
+     "Carta"
+    ],
+    "2026-07-28": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-29": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-07-30": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-07-31": [
+     "Plastica"
+    ],
+    "2026-08-01": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-03": [
+     "Carta"
+    ],
+    "2026-08-04": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-05": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-06": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-08-07": [
+     "Plastica"
+    ],
+    "2026-08-08": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-10": [
+     "Carta"
+    ],
+    "2026-08-11": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-12": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-13": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-08-14": [
+     "Plastica"
+    ],
+    "2026-08-15": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-17": [
+     "Carta"
+    ],
+    "2026-08-18": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-19": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-20": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-08-21": [
+     "Plastica"
+    ],
+    "2026-08-22": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-24": [
+     "Carta"
+    ],
+    "2026-08-25": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-26": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-27": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-08-28": [
+     "Plastica"
+    ],
+    "2026-08-29": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-08-31": [
+     "Carta"
+    ],
+    "2026-09-01": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-02": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-03": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-09-04": [
+     "Plastica"
+    ],
+    "2026-09-05": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-07": [
+     "Carta"
+    ],
+    "2026-09-08": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-09": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-10": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-09-11": [
+     "Plastica"
+    ],
+    "2026-09-12": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-14": [
+     "Carta"
+    ],
+    "2026-09-15": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-16": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-17": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-09-18": [
+     "Plastica"
+    ],
+    "2026-09-19": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-21": [
+     "Carta"
+    ],
+    "2026-09-22": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-23": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-24": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-09-25": [
+     "Plastica"
+    ],
+    "2026-09-26": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-28": [
+     "Carta"
+    ],
+    "2026-09-29": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-09-30": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-01": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-10-02": [
+     "Plastica"
+    ],
+    "2026-10-03": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-05": [
+     "Carta"
+    ],
+    "2026-10-06": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-07": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-08": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-10-09": [
+     "Plastica"
+    ],
+    "2026-10-10": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-12": [
+     "Carta"
+    ],
+    "2026-10-13": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-14": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-15": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-10-16": [
+     "Plastica"
+    ],
+    "2026-10-17": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-19": [
+     "Carta"
+    ],
+    "2026-10-20": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-21": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-22": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-10-23": [
+     "Plastica"
+    ],
+    "2026-10-24": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-26": [
+     "Carta"
+    ],
+    "2026-10-27": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-28": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-10-29": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-10-30": [
+     "Plastica"
+    ],
+    "2026-10-31": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-02": [
+     "Carta"
+    ],
+    "2026-11-03": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-04": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-05": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-11-06": [
+     "Plastica"
+    ],
+    "2026-11-07": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-09": [
+     "Carta"
+    ],
+    "2026-11-10": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-11": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-12": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-11-13": [
+     "Plastica"
+    ],
+    "2026-11-14": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-16": [
+     "Carta"
+    ],
+    "2026-11-17": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-18": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-19": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-11-20": [
+     "Plastica"
+    ],
+    "2026-11-21": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-23": [
+     "Carta"
+    ],
+    "2026-11-24": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-25": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-26": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-11-27": [
+     "Plastica"
+    ],
+    "2026-11-28": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-11-30": [
+     "Carta"
+    ],
+    "2026-12-01": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-02": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-03": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-12-04": [
+     "Plastica"
+    ],
+    "2026-12-05": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-07": [
+     "Carta"
+    ],
+    "2026-12-08": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-09": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-10": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-12-11": [
+     "Plastica"
+    ],
+    "2026-12-12": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-14": [
+     "Carta"
+    ],
+    "2026-12-15": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-16": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-17": [
+     "Umido",
+     "Vetro"
+    ],
+    "2026-12-18": [
+     "Plastica"
+    ],
+    "2026-12-19": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-21": [
+     "Carta"
+    ],
+    "2026-12-22": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-23": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-24": [
+     "Umido",
+     "Metalli"
+    ],
+    "2026-12-25": [
+     "Plastica"
+    ],
+    "2026-12-26": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-28": [
+     "Carta"
+    ],
+    "2026-12-29": [
+     "Umido",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-30": [
+     "Secco Residuo",
+     "Pannolini e pannoloni (su richiesta)"
+    ],
+    "2026-12-31": [
+     "Umido",
+     "Vetro"
+    ]
+   }
+  }
+ }
+}
