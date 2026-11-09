@@ -227,6 +227,47 @@
   .zone-dot.azzurra { background: var(--zone-azzurra); }
   .zone-help { font-size: 0.85rem; }
   .zone-option[aria-checked="true"] .zone-dot { background: var(--on-waste); box-shadow: none; }
+  .zone-saved {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .zone-saved::before { content: "✓"; font-weight: 700; color: var(--brand-ink); }
+  .zone-saved.unsaved::before { content: "!"; color: var(--waste-nessuna); }
+
+  /* First visit: choose a zone once */
+  .zone-onboarding {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--comune-green);
+    border-radius: 8px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+  }
+  .zone-onboarding h2 { font-size: 1.6rem; margin-bottom: 0.5rem; color: var(--fg-strong); }
+  .zone-onboarding p { max-width: 34rem; margin: 0 auto 1.25rem; }
+  .zone-choices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    gap: 0.75rem;
+    max-width: 30rem;
+    margin: 0 auto 1rem;
+  }
+  .zone-choice {
+    border: none;
+    border-radius: 8px;
+    color: var(--on-waste);
+    font-size: 1.35rem;
+    font-weight: 700;
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, filter 0.15s ease;
+  }
+  .zone-choice:hover { filter: brightness(1.08); transform: translateY(-1px); }
+  .zone-choice.verde { background: var(--zone-verde); }
+  .zone-choice.azzurra { background: var(--zone-azzurra); }
   #date-picker-button { white-space: nowrap; flex: 0 0 auto; }
 
   /* Waste Type Badges */
@@ -589,17 +630,30 @@
 <!-- Main Content Container -->
 <div class="container">
 
+  <!-- First visit: no zone saved yet -->
+  <div class="zone-onboarding mt-3 mb-4" id="zone-onboarding" hidden>
+    <h2>Scegli la tua zona</h2>
+    <p>Alcamo è divisa in due zone con giorni di raccolta diversi. Scegli la tua una sola volta: la ricorderemo su questo dispositivo.</p>
+    <div class="zone-choices">
+      <button type="button" class="zone-choice verde" id="choose-verde" data-zone="verde">Zona Verde</button>
+      <button type="button" class="zone-choice azzurra" id="choose-azzurra" data-zone="azzurra">Zona Azzurra</button>
+    </div>
+    <a class="zone-help" href="https://www.comune.alcamo.tp.it/it/garbage-calendars" target="_blank" rel="noopener noreferrer">Non conosci la tua zona? Consulta la mappa</a>
+  </div>
+
+  <div class="zone-content">
   <!-- Zone picker -->
   <div class="zone-picker mt-3 mb-2">
     <span class="zone-picker-label" id="zone-label">La tua zona</span>
     <div class="zone-options" role="radiogroup" aria-labelledby="zone-label">
-      <button type="button" class="zone-option verde" id="zone-verde" data-zone="verde" role="radio" aria-checked="true">
+      <button type="button" class="zone-option verde" id="zone-verde" data-zone="verde" role="radio" aria-checked="false">
         <span class="zone-dot verde"></span>Zona Verde
       </button>
       <button type="button" class="zone-option azzurra" id="zone-azzurra" data-zone="azzurra" role="radio" aria-checked="false">
         <span class="zone-dot azzurra"></span>Zona Azzurra
       </button>
     </div>
+    <span class="zone-saved" id="zone-saved" aria-live="polite">Ricordata su questo dispositivo</span>
     <a class="zone-help" href="https://www.comune.alcamo.tp.it/it/garbage-calendars" target="_blank" rel="noopener noreferrer">Non conosci la tua zona? Consulta la mappa</a>
   </div>
 
@@ -648,6 +702,8 @@
     </div>
   </div>
 
+  </div>
+
   <div class="text-center mb-4">
     <small class="text-muted">Sviluppato da <a href="https://ottimai.com" target="_blank" rel="noopener noreferrer">OttimAI S.R.L.</a></small>
   </div>
@@ -669,6 +725,7 @@
     </div>
   </div>
 
+  <div class="zone-content">
   <!-- Weekly rotation for the selected zone -->
   <div class="mb-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -736,6 +793,8 @@
         </div>
       </div>
     </div>
+  </div>
+
   </div>
 
   <!-- Footer -->
@@ -843,12 +902,22 @@
   const DAYS = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
   const MONTHS = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
 
-  // Selected zone (remembered on this device)
-  let currentZone = "verde";
-  try {
-    const saved = localStorage.getItem("alcamo-zone");
-    if (saved && ZONE_NAMES[saved]) currentZone = saved;
-  } catch (e) { /* storage unavailable */ }
+  // Selected zone: a local-only preference kept in this browser's localStorage.
+  // Nothing leaves the device. Without a saved zone the page asks once.
+  const ZONE_KEY = "alcamo-zone";
+  function readSavedZone() {
+    try {
+      const saved = localStorage.getItem(ZONE_KEY);
+      return saved && ZONE_NAMES[saved] ? saved : null;
+    } catch (e) { return null; }
+  }
+  function saveZone(zone) {
+    try {
+      localStorage.setItem(ZONE_KEY, zone);
+      return localStorage.getItem(ZONE_KEY) === zone;
+    } catch (e) { return false; }
+  }
+  let currentZone = readSavedZone() || "verde";
 
   function formatDateKey(date) {
     const year = date.getFullYear();
@@ -974,14 +1043,41 @@
 
   // Zone picker
   const zoneButtons = Array.from(document.querySelectorAll(".zone-option"));
-  function setZone(zone) {
+  const zoneOnboarding = document.getElementById("zone-onboarding");
+  const zoneContent = Array.from(document.querySelectorAll(".zone-content"));
+  const zoneSaved = document.getElementById("zone-saved");
+
+  function showZone(zone) {
     currentZone = zone;
-    try { localStorage.setItem("alcamo-zone", zone); } catch (e) { /* storage unavailable */ }
+    zoneOnboarding.hidden = true;
+    zoneContent.forEach(el => { el.hidden = false; });
     zoneButtons.forEach(btn => btn.setAttribute("aria-checked", btn.dataset.zone === zone ? "true" : "false"));
     updateWasteInfo(selectedDate);
     renderWeekTable();
     if (!nextPickups.hidden) runSearch();
   }
+  function setZone(zone) {
+    const saved = saveZone(zone);
+    zoneSaved.classList.toggle("unsaved", !saved);
+    zoneSaved.textContent = saved
+      ? `${ZONE_NAMES[zone]} ricordata su questo dispositivo`
+      : "Non è stato possibile salvare la zona in questo browser";
+    showZone(zone);
+  }
+  function askForZone() {
+    zoneContent.forEach(el => { el.hidden = true; });
+    zoneOnboarding.hidden = false;
+  }
+  document.querySelectorAll(".zone-choice").forEach(btn => {
+    btn.addEventListener("click", () => {
+      setZone(btn.dataset.zone);
+      document.getElementById("zone-" + btn.dataset.zone).focus();
+    });
+  });
+  // Keep other open tabs of the page on the same zone
+  window.addEventListener("storage", e => {
+    if (e.key === ZONE_KEY && e.newValue && ZONE_NAMES[e.newValue] && e.newValue !== currentZone) showZone(e.newValue);
+  });
   zoneButtons.forEach(btn => {
     btn.addEventListener("click", () => setZone(btn.dataset.zone));
     btn.addEventListener("keydown", e => {
@@ -1125,10 +1221,14 @@
   }
   searchWasteButton.addEventListener("click", runSearch);
 
-  // Initialize the page
-  zoneButtons.forEach(btn => btn.setAttribute("aria-checked", btn.dataset.zone === currentZone ? "true" : "false"));
-  updateWasteInfo(selectedDate);
-  renderWeekTable();
+  // Initialize the page: saved zone, or ask once
+  const initialZone = readSavedZone();
+  if (initialZone) {
+    zoneSaved.textContent = `${ZONE_NAMES[initialZone]} ricordata su questo dispositivo`;
+    showZone(initialZone);
+  } else {
+    askForZone();
+  }
 
   // PWA installation (button shows only where the browser offers installation)
   let deferredPrompt;
